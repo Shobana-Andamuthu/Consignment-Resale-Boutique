@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <linearGradient id="favCopper1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE1D9"/>
+      <stop offset="35%" stop-color="#E59985"/>
+      <stop offset="70%" stop-color="#C56A55"/>
+      <stop offset="100%" stop-color="#8F3E2B"/>
+    </linearGradient>
+    <linearGradient id="favCopper2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97F69"/>
+      <stop offset="100%" stop-color="#5E2013"/>
+    </linearGradient>
+  </defs>
+  <!-- Floating Star -->
+  <path d="M 250,25 C 250,55 260,65 290,65 C 260,65 250,75 250,105 C 250,75 240,65 210,65 C 240,65 250,55 250,25 Z" fill="url(#favCopper1)"/>
+  <!-- Left Wing -->
+  <path d="M 112,120 C 142,120 190,165 218,225 L 262,320 L 236,368 L 142,185 C 125,152 108,138 88,136 C 90,126 100,120 112,120 Z" fill="url(#favCopper1)"/>
+  <!-- Right Inner Peak -->
+  <path d="M 262,320 L 348,155 C 368,120 392,120 418,120 C 405,126 395,137 385,160 L 315,310 L 262,320 Z" fill="url(#favCopper1)"/>
+  <!-- Right Column -->
+  <path d="M 385,160 C 400,125 418,120 418,120 C 400,122 382,147 365,192 L 340,262 C 348,312 355,367 375,412 C 388,440 412,444 425,444 C 395,444 368,427 352,387 C 336,342 330,287 328,232 L 348,157 Z" fill="url(#favCopper2)"/>
+  <!-- Left Base -->
+  <path d="M 142,185 L 165,245 C 148,275 132,325 130,370 C 128,405 110,435 80,442 C 65,445 52,430 52,408 C 52,360 85,310 115,280 L 142,185 Z" fill="url(#favCopper2)"/>
+  <!-- Ribbon Swash -->
+  <path d="M 56,365 C 72,325 112,280 168,280 C 215,280 255,325 292,382 C 328,438 368,465 415,465 C 358,465 310,432 272,375 C 238,322 205,288 165,288 C 120,288 85,320 68,360 Z" fill="url(#favCopper1)"/>
+</svg>

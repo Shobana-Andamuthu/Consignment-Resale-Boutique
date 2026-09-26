@@ -1,0 +1,713 @@
+/* ==========================================================================
+   MODA RESALE — RESPONSIVE SYSTEM
+   Tested Range: 200px - 2560px+ (Fluid, Zero Overflow, Pure CSS)
+   ========================================================================== */
+
+/* 1. LARGE SCREENS (1440px - 2560px+) */
+@media (min-width: 1440px) {
+  :root {
+    --container-max-width: 1320px;
+  }
+}
+
+/* 2. LAPTOP & COMPACT DESKTOP (1081px - 1240px) */
+@media (max-width: 1240px) {
+  .navbar-inner {
+    gap: 0.75rem;
+  }
+
+  .main-nav {
+    gap: 0.85rem;
+  }
+  
+  .nav-link {
+    font-size: 0.82rem;
+  }
+
+  .header-actions {
+    gap: 0.45rem;
+  }
+
+  .pill-btn {
+    padding: 0.38rem 0.75rem;
+    font-size: 0.78rem;
+  }
+
+  .footer-main-grid {
+    grid-template-columns: 1.2fr 1fr 1fr 1.1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1081px) {
+  .menu-toggle {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+/* 3. TABLET & IPAD (769px - 1080px) */
+@media (max-width: 1080px) {
+  .main-nav,
+  .header-auth-pills,
+  .header-actions .icon-btn:not(.menu-toggle) {
+    display: none !important; /* Smooth collapse everything into mobile drawer menu */
+  }
+
+  .menu-toggle {
+    display: flex !important;
+  }
+
+  .hero-shell {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-vault-main-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-media-card,
+  .hero-vault-visual-pane {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-vault-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .home2-cat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .lab-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .footer-main-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .vip-channels-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.15rem;
+  }
+}
+
+/* 4. MOBILE LANDSCAPE & PHABLET (576px - 768px) */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 68px;
+    --container-padding: 1.2rem;
+  }
+
+  .brand-title {
+    font-size: 1.2rem;
+  }
+
+  .brand-sub {
+    font-size: 0.58rem;
+  }
+
+  .vault-ticker-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    border-radius: var(--radius-lg);
+    padding: 0.85rem 1rem;
+  }
+
+  .hero-vault-quick-search {
+    max-width: 100%;
+  }
+
+  .hero-vault-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .inner-page-hero {
+    padding-top: 2rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .inner-hero-breadcrumb {
+    font-size: 0.72rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Responsive Form & Stats Grids */
+  .form-grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+
+  .vip-channels-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .curate-lab-shell {
+    padding: 1.5rem 1rem !important;
+    max-width: 100% !important;
+  }
+
+  .lab-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .lab-builder-card {
+    max-width: 100% !important;
+    padding: 1.5rem 1rem !important;
+  }
+
+  .scroll-top-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+
+  [dir="rtl"] .scroll-top-btn {
+    right: auto;
+    left: 16px;
+  }
+
+  .hero-trending-badge {
+    bottom: 12px !important;
+    left: 12px !important;
+    max-width: calc(100% - 24px) !important;
+    padding: 0.45rem 0.75rem !important;
+    gap: 0.5rem !important;
+  }
+
+  [dir="rtl"] .hero-trending-badge {
+    right: 12px !important;
+    left: auto !important;
+  }
+
+  .trending-icon {
+    width: 26px !important;
+    height: 26px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .trending-text small {
+    font-size: 0.6rem !important;
+  }
+
+  .trending-text b {
+    font-size: 0.78rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* 5. STANDARD MOBILE (360px - 540px) */
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 1rem;
+  }
+
+  .stats-grid-3 {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+  }
+
+  .hero-stats-row {
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .hero-vault-quick-search {
+    flex-direction: column;
+    padding: 0.6rem;
+    border-radius: var(--radius-md);
+  }
+
+  .vault-search-input-wrap {
+    width: 100%;
+    padding: 0.35rem;
+  }
+
+  .vault-search-btn {
+    width: 100%;
+  }
+
+  .hero-vault-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-vault-actions .btn {
+    width: 100%;
+  }
+
+  .vault-floating-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    padding: 0.75rem;
+  }
+
+  .vault-floating-card-price {
+    text-align: left;
+  }
+
+  [dir="rtl"] .vault-floating-card-price {
+    text-align: right;
+  }
+
+  .hero-vault-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home2-cat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vip-channel-card {
+    padding: 1.15rem !important;
+    gap: 0.85rem !important;
+  }
+
+  .cta-banner {
+    padding: 1.75rem 1.15rem !important;
+  }
+
+  .cta-banner h2 {
+    font-size: clamp(1.25rem, 5.5vw, 1.75rem) !important;
+  }
+
+  .cta-banner p {
+    font-size: 0.9rem !important;
+    margin-bottom: 1.35rem !important;
+  }
+
+  .cta-banner .cta-btn-row,
+  .cta-banner div[style*="display:flex"] {
+    width: 100% !important;
+  }
+
+  .cta-banner .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    text-align: center !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Certificate Lookup Group Mobile Stacking */
+  .lookup-input-group {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.65rem !important;
+  }
+
+  .lookup-input-group .form-control,
+  .lookup-input-group input,
+  .lookup-input-group .btn {
+    width: 100% !important;
+  }
+
+  /* Interactive Salon Map Mobile Layout */
+  .salon-map-shell {
+    padding: 1.1rem !important;
+  }
+
+  .salon-map-tabs {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.45rem !important;
+  }
+
+  .salon-map-tab-btn {
+    flex: 1 1 calc(50% - 0.45rem) !important;
+    padding: 0.45rem 0.65rem !important;
+    font-size: 0.78rem !important;
+    text-align: center !important;
+  }
+
+  .salon-map-frame-wrapper {
+    height: 280px !important;
+  }
+
+  .salon-map-footer {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.85rem !important;
+  }
+
+  .footer-subscribe-form {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    background-color: var(--bg-card) !important;
+    border: 1.5px solid var(--border-color) !important;
+    border-radius: var(--radius-pill) !important;
+    padding: 0.25rem 0.25rem 0.25rem 1rem !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  [dir="rtl"] .footer-subscribe-form {
+    padding: 0.25rem 1rem 0.25rem 0.25rem !important;
+  }
+
+  .footer-subscribe-input {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    border: none !important;
+    background: transparent !important;
+    outline: none !important;
+    font-size: 0.85rem !important;
+    color: var(--text-primary) !important;
+    padding: 0.35rem 0 !important;
+  }
+
+  .footer-subscribe-btn {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: var(--radius-pill) !important;
+    flex-shrink: 0 !important;
+  }
+  .vip-channels-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+
+  .vip-channel-card {
+    padding: 1.35rem 1.15rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .vip-channel-header h3 {
+    font-size: 1.05rem !important;
+  }
+
+  /* Cart and Quick Items Mobile Tuning */
+  .cart-summary-card {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .cart-checkout-btn {
+    font-size: 0.82rem !important;
+    padding: 0.75rem 0.85rem !important;
+    min-height: 48px !important;
+  }
+
+  .mobile-quick-actions {
+    gap: 0.4rem !important;
+  }
+
+  .mobile-quick-item {
+    font-size: 0.78rem !important;
+    padding: 0.55rem 0.35rem !important;
+    gap: 0.35rem !important;
+  }
+}
+
+/* 6. COMPACT MOBILE (280px - 359px) */
+@media (max-width: 359px) {
+  :root {
+    --container-padding: 0.75rem;
+  }
+
+  .mobile-quick-item {
+    font-size: 0.72rem !important;
+    padding: 0.5rem 0.25rem !important;
+    gap: 0.25rem !important;
+  }
+
+  .brand-title {
+    font-size: 1.05rem;
+  }
+
+  .brand-sub {
+    display: none;
+  }
+
+  .mobile-drawer {
+    width: 100vw;
+  }
+
+  .vip-channel-card {
+    padding: 1.15rem 0.85rem !important;
+  }
+
+  .vip-channel-header h3 {
+    font-size: 0.98rem !important;
+  }
+
+
+  .salon-map-tab-btn {
+    flex: 1 1 100% !important;
+  }
+
+  .btn {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* 7. ULTRA-COMPACT VIEWPORTS (200px - 279px) */
+@media (max-width: 279px) {
+  :root {
+    --container-padding: 0.5rem;
+    --header-height: 60px;
+  }
+
+  .vip-channel-card {
+    padding: 0.85rem !important;
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+    font-size: 0.95rem;
+  }
+
+  .brand-title {
+    font-size: 0.95rem;
+  }
+
+  .product-card {
+    padding: 0.6rem;
+  }
+
+  .product-name {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.72rem;
+  }
+}
+
+/* ==========================================================================
+   8. AUTH SPLIT SCREEN RESPONSIVE BEHAVIOR
+   ========================================================================== */
+@media (max-width: 991px) {
+  .auth-split-layout,
+  .auth-split-layout.auth-reverse {
+    grid-template-columns: 1fr !important;
+    min-height: 100vh;
+  }
+
+  .auth-visual-pane {
+    min-height: 260px !important;
+    padding: 1.75rem 1.25rem !important;
+    order: 1 !important;
+  }
+
+  .auth-visual-footer h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .auth-form-pane {
+    padding: 2.5rem 1.25rem 3.5rem 1.25rem !important;
+    min-height: auto !important;
+    order: 2 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-visual-pane {
+    min-height: 210px !important;
+    padding: 1.25rem 1rem !important;
+  }
+
+  .auth-visual-footer h2 {
+    font-size: 1.3rem !important;
+  }
+
+  .auth-form-pane {
+    padding: 2rem 1rem 3rem 1rem !important;
+  }
+
+  .auth-title {
+    font-size: 1.85rem !important;
+  }
+
+  .auth-meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+/* ==========================================================================
+   9. CART & WISHLIST RESPONSIVE STYLES
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .cart-trust-row {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .cart-layout {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .cart-items-list {
+    max-height: none !important;
+    overflow-y: visible !important;
+    padding-right: 0 !important;
+  }
+
+  .cart-summary-card {
+    position: static !important;
+    top: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-trust-row {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    padding: 1.35rem 1.15rem !important;
+  }
+
+  .cart-table-header {
+    display: none !important;
+  }
+
+  .cart-item-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.9rem !important;
+    padding: 1.15rem !important;
+  }
+
+  .cart-item-top-row {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 0.9rem !important;
+    width: 100% !important;
+  }
+
+  .cart-item-media {
+    width: 75px !important;
+    height: 75px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .cart-item-info {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .cart-item-title {
+    font-size: 0.95rem !important;
+    white-space: normal !important;
+    line-height: 1.35 !important;
+  }
+
+  .cart-item-bottom-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding-top: 0.75rem !important;
+    border-top: 1px dashed var(--border-color) !important;
+  }
+
+  .cart-qty-ctrl {
+    margin: 0 !important;
+    padding: 0.2rem 0.45rem !important;
+  }
+
+  .cart-item-price-box {
+    text-align: right !important;
+    min-width: auto !important;
+  }
+
+  .cart-item-price {
+    font-size: 1.15rem !important;
+    font-weight: 800 !important;
+  }
+
+  .cart-item-unit-price {
+    font-size: 0.75rem !important;
+    color: var(--text-muted) !important;
+    display: block !important;
+  }
+
+  .wishlist-top-bar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .wishlist-top-bar > div:last-child {
+    width: 100% !important;
+    display: flex !important;
+    gap: 0.5rem !important;
+  }
+
+  .wishlist-top-bar .btn {
+    flex: 1 !important;
+    text-align: center !important;
+  }
+}
+
+

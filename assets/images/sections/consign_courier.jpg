@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad_Insured_Global_Transit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF0E6"/>
+      <stop offset="100%" stop-color="#C96F5A"/>
+    </linearGradient>
+    <filter id="shadow_Insured_Global_Transit" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#302521" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="800" height="800" fill="url(#grad_Insured_Global_Transit)"/>
+  <circle cx="400" cy="360" r="240" fill="#FFFFFF" fill-opacity="0.65" filter="url(#shadow_Insured_Global_Transit)"/>
+  <g transform="translate(310, 270) scale(3.8)" stroke="#302521" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+  </g>
+  <text x="400" y="560" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="34" font-weight="800" fill="#302521" text-anchor="middle" letter-spacing="1.2">Insured Global Transit</text>
+  <text x="400" y="605" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="20" font-weight="700" fill="#C96F5A" text-anchor="middle" letter-spacing="3">DOORSTEP WHITE-GLOVE COURIER</text>
+  <text x="400" y="640" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="600" fill="#A99588" text-anchor="middle" letter-spacing="2">MODA RESALE ARCHIVE</text>
+</svg>

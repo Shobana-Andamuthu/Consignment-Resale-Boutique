@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Moda Resale — Modern luxury consignment house preserving fashion heritage through circular curation and authenticated archives.">
+  <title>Moda Resale — About The Maison & Our Curators</title>
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar-inner">
+      
+      <a href="index.html" class="brand-link" aria-label="Moda Resale Home">
+        <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+        <div class="brand-text">
+          <div class="brand-title">MODA<span>RESALE</span></div>
+          <div class="brand-sub">Curated Luxury Archive</div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <div class="nav-dropdown">
+          <a href="index.html" class="nav-link dropdown-toggle">
+            Home
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="dropdown-card-menu">
+            <a href="index.html" class="dropdown-card-item">
+              <span class="dropdown-card-title">Home 1 — Classic Boutique</span>
+              <span class="dropdown-card-desc">Curated drops & interactive valuation</span>
+            </a>
+            <a href="home-2.html" class="dropdown-card-item">
+              <span class="dropdown-card-title">Home 2 — Trending Vault</span>
+              <span class="dropdown-card-desc">Editorial split hero & consignment steps</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="consign.html" class="nav-link">Consign With Us</a>
+        <a href="authentication.html" class="nav-link">Authentication</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button type="button" class="icon-btn" data-action="toggle-dir" aria-label="Toggle Direction" title="Switch LTR/RTL">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 8h16M16 4l4 4-4 4M20 16H4M8 12l-4 4 4 4"/>
+          </svg>
+        </button>
+
+        <button type="button" class="icon-btn" data-action="toggle-theme" aria-label="Toggle Theme" title="Switch Light/Dark Mode">
+          <span class="theme-icon-slot"></span>
+        </button>
+
+        <a href="wishlist.html" class="icon-btn" aria-label="Saved Wishlist" title="View Wishlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 0 5.5 5.5 0 0 0 0 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <b class="wishlist-count">0</b>
+        </a>
+
+        <a href="cart.html" class="icon-btn" aria-label="Shopping Bag" title="Shopping Bag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <b class="cart-count">0</b>
+        </a>
+
+        <div class="header-auth-pills">
+          <a href="login.html" class="pill-btn">Login</a>
+          <a href="register.html" class="pill-btn pill-btn-solid">Sign Up</a>
+        </div>
+
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open Navigation">☰</button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-head">
+      <a href="index.html" class="brand-link">
+        <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+        <div class="brand-title">MODA<span>RESALE</span></div>
+      </a>
+      <button type="button" class="icon-btn" id="mobileDrawerClose" aria-label="Close Navigation">✕</button>
+    </div>
+
+    <!-- Mobile Quick Commerce Bar (Wishlist & Cart Bag) -->
+    <div class="mobile-quick-actions">
+      <a href="wishlist.html" class="mobile-quick-item" title="View Wishlist">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 0 5.5 5.5 0 0 0 0 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <span>Wishlist (<b class="wishlist-count">0</b>)</span>
+      </a>
+      <a href="cart.html" class="mobile-quick-item" title="View Shopping Bag">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span>Bag (<b class="cart-count">0</b>)</span>
+      </a>
+    </div>
+
+    <nav class="mobile-drawer-links">
+      <div class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link mobile-dropdown-toggle">
+          <span>Home Pages</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="mobile-sub-menu">
+          <a href="index.html" class="mobile-sub-link">Home 1 — Classic Boutique</a>
+          <a href="home-2.html" class="mobile-sub-link">Home 2 — Trending Vault</a>
+        </div>
+      </div>
+      <a href="shop.html" class="mobile-nav-link">Shop Collection</a>
+      <a href="consign.html" class="mobile-nav-link">Consign With Us</a>
+      <a href="authentication.html" class="mobile-nav-link">Authentication</a>
+      <a href="about.html" class="mobile-nav-link active">About Maison</a>
+      <a href="contact.html" class="mobile-nav-link">Contact & Salons</a>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <div class="mobile-toggles-grid">
+        <button type="button" class="btn btn-light btn-sm" data-action="toggle-theme" aria-label="Toggle Theme">
+          <span class="theme-icon-slot">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </span>
+          <span>Theme</span>
+        </button>
+        <button type="button" class="btn btn-light btn-sm" data-action="toggle-dir" aria-label="Toggle Direction">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 8h16M16 4l4 4-4 4M20 16H4M8 12l-4 4 4 4"/>
+          </svg>
+          <span>Direction</span>
+        </button>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; width:100%;">
+        <a href="login.html" class="btn btn-light btn-sm" style="text-align:center;">Login</a>
+        <a href="register.html" class="btn btn-gradient btn-sm" style="text-align:center;">Sign Up</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content: About Us (7 Sections) -->
+  <main id="mainContent">
+
+    <!-- SECTION 1: Standardized Inner Hero -->
+    <section class="inner-page-hero">
+      <div class="container">
+        <div class="inner-hero-content">
+          <nav class="inner-hero-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="crumb-sep">/</span>
+            <span class="crumb-active">About Maison</span>
+          </nav>
+          <p class="kicker">✧ &nbsp; OUR PHILOSOPHY & HERITAGE</p>
+          <h1 class="inner-hero-title">Redefining Circular Luxury <span style="color:var(--accent-terracotta);">For The Modern Collector</span></h1>
+          <p class="inner-hero-subtitle">Moda Resale was founded on a singular conviction: iconic fashion craftsmanship deserves perpetual life in the wardrobes of discerning tastemakers worldwide.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Our Origin & Story -->
+    <section class="section-spacing" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="center-title">
+          <p class="kicker">OUR ROOTS</p>
+          <h2>Craftsmanship Built To Transcend Seasons</h2>
+          <p>Founded by fashion archivist Elena Vance and luxury authenticator Jean-Luc Moreau.</p>
+        </div>
+
+        <div class="curate-lab-shell" style="background:var(--bg-card); padding: clamp(1.5rem, 3vw, 2.5rem);">
+          <div class="lab-grid" style="grid-template-columns: 1fr 1fr; align-items:center;">
+            <div>
+              <h3>A Bridge Between Eras</h3>
+              <p>
+                What began as a private curation salon on Rue Saint-Honore has evolved into an international platform celebrating historical fashion masterpieces. We believe genuine luxury is not temporary consumption, but timeless design that retains lasting cultural and monetary value.
+              </p>
+              <p>
+                By applying forensic-grade authentication and white-glove logistics, we have established the most trusted secondary market ecosystem for collectors worldwide.
+              </p>
+              <div class="form-grid-2" style="margin-top:1.25rem;">
+                <div class="benefit-card" style="flex-direction:column; background:var(--bg-surface); padding:1rem;">
+                  <b style="font-size:1.5rem; font-family:var(--font-display); color:var(--accent-terracotta);">15,000+</b>
+                  <span style="font-size:0.72rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Archived Pieces Sold</span>
+                </div>
+                <div class="benefit-card" style="flex-direction:column; background:var(--bg-surface); padding:1rem;">
+                  <b style="font-size:1.5rem; font-family:var(--font-display); color:var(--accent-sage);">42</b>
+                  <span style="font-size:0.72rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Countries Served</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-media-card" style="aspect-ratio: 4 / 3.2; max-width: 100%;">
+              <img src="assets/images/about/about-boutique-hero.jpg" alt="Moda Resale sunlit modern flagship boutique interior">
+              <div class="hero-trending-badge">
+                <span class="trending-icon">🏛</span>
+                <div class="trending-text">
+                  <small>FLAGSHIP SALONS</small>
+                  <b>Paris · New York · London</b>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Our Curated Approach (3 Pillars with HD Photography) -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="center-title" style="margin-bottom: 2.25rem;">
+          <p class="kicker">THE THREE PILLARS</p>
+          <h2>Our Curatorial Philosophy</h2>
+          <p>Every piece admitted to our collection meets three non-negotiable criteria.</p>
+        </div>
+
+        <div class="category-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <!-- Pillar 1: Curation Over Volume -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/about/about-pillar-curation.jpg" alt="Fashion archivist inspecting vintage Chanel tweed suit on mannequin">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-coral" style="align-self:flex-start; margin-bottom:0.6rem;">PILLAR 01</span>
+              <h3>1. Curation Over Volume</h3>
+              <p>We decline over 60% of submitted pieces to ensure our catalog features only genuine investment-grade icons in pristine condition.</p>
+            </div>
+          </article>
+
+          <!-- Pillar 2: Absolute Forensic Truth -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/about/about-pillar-forensic.jpg" alt="Master luxury authenticator examining Hermes gold heat stamping with jeweler loupe">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-sage" style="align-self:flex-start; margin-bottom:0.6rem;">PILLAR 02</span>
+              <h3>2. Absolute Forensic Truth</h3>
+              <p>We back every claim with microscopic data, serial verification, and a lifetime 100% money-back guarantee.</p>
+            </div>
+          </article>
+
+          <!-- Pillar 3: Mindful Circularity -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/about/about-pillar-circularity.jpg" alt="Sustainable luxury archival packaging with organic dust bags and silk ribbon">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-dark" style="align-self:flex-start; margin-bottom:0.6rem;">PILLAR 03</span>
+              <h3>3. Mindful Circularity</h3>
+              <p>By recirculating pristine luxury, we preserve artisan traditions while diverting thousands of tons of high-grade textiles from landfills.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Meet The Curators (with HD Portraits) -->
+    <section class="section-spacing" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="center-title" style="margin-bottom: 2.25rem;">
+          <p class="kicker">EXPERT LEADERSHIP</p>
+          <h2>Meet Our Master Curators</h2>
+          <p>Decades of collective experience spanning auction houses, heritage ateliers, and luxury houses.</p>
+        </div>
+
+        <div class="category-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <!-- Curator 1: Elena Vance -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/about/about-curator-elena.jpg" alt="Elena Vance - Co-Founder & Head of Curation">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-coral" style="align-self:flex-start; margin-bottom:0.6rem;">CO-FOUNDER &amp; HEAD OF CURATION</span>
+              <h3>Elena Vance</h3>
+              <p>Former vintage archivist at Christie’s Paris. Specializes in Hermes exotic leathers and rare Chanel runway collections.</p>
+            </div>
+          </article>
+
+          <!-- Curator 2: Jean-Luc Moreau -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/about/about-curator-jeanluc.jpg" alt="Jean-Luc Moreau - Head Horologist">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-sage" style="align-self:flex-start; margin-bottom:0.6rem;">HEAD HOROLOGIST</span>
+              <h3>Jean-Luc Moreau</h3>
+              <p>Certified Swiss master watchmaker with 20+ years expertise auditing vintage Rolex, Patek Philippe, and Audemars Piguet timepieces.</p>
+            </div>
+          </article>
+
+          <!-- Curator 3: Amira Sen -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/about/about-curator-amira.jpg" alt="Amira Sen - Fine Jewelry Specialist">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-dark" style="align-self:flex-start; margin-bottom:0.6rem;">FINE JEWELRY SPECIALIST</span>
+              <h3>Amira Sen</h3>
+              <p>GIA Graduate Gemologist focusing on Cartier, Van Cleef &amp; Arpels, and vintage high-carat signed period jewelry.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Sustainable Packaging & Impact -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="curate-lab-shell" style="background:var(--bg-surface);">
+          <div class="lab-grid">
+            <div>
+              <p class="kicker kicker-sage">CIRCULAR IMPACT</p>
+              <h2>Eco-Conscious Archival Packaging</h2>
+              <p>
+                Every order arrives in our 100% recyclable, plastic-free custom gift boxes lined with organic cotton dust covers. Luxury preservation that respects the planet.
+              </p>
+              <div class="badge-row">
+                <span class="badge badge-sage">FSC-Certified Boxes</span>
+                <span class="badge badge-coral">Carbon-Neutral Shipping</span>
+              </div>
+            </div>
+
+            <div style="border-radius:var(--radius-lg); overflow:hidden; border:1.5px solid var(--border-color); aspect-ratio:4/3;">
+              <img src="assets/images/about/about-circular-packaging.jpg" alt="Eco luxury packaging box">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Press & Media Accolades (with HD Editorial Photos & Colored Headings) -->
+    <section class="section-spacing" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="center-title" style="margin-bottom: 2.25rem;">
+          <p class="kicker">IN THE PRESS</p>
+          <h2>Featured In Global Fashion Media</h2>
+          <p>Recognized worldwide for our forensic authentication standards and circular curation.</p>
+        </div>
+
+        <div class="category-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+          <!-- Press 1: Vogue -->
+          <article class="amenity-card" style="text-align:center;">
+            <div class="amenity-card-media">
+              <img src="assets/images/about/about-press-vogue.jpg" alt="Vogue Fashion Editorial Coverage">
+            </div>
+            <div class="amenity-card-body" style="align-items:center;">
+              <span class="badge badge-coral" style="margin-bottom:0.5rem;">FASHION EDITORIAL</span>
+              <h3 style="color:var(--accent-terracotta); font-family:var(--font-display); font-size:1.45rem; letter-spacing:0.08em; margin-bottom:0.4rem;">VOGUE</h3>
+              <p style="font-size:0.86rem; font-style:italic; color:var(--text-secondary);">"The premier modern destination for authenticated quiet luxury."</p>
+            </div>
+          </article>
+
+          <!-- Press 2: Elle -->
+          <article class="amenity-card" style="text-align:center;">
+            <div class="amenity-card-media">
+              <img src="assets/images/about/about-press-elle.jpg" alt="Elle Circular Luxury Feature">
+            </div>
+            <div class="amenity-card-body" style="align-items:center;">
+              <span class="badge badge-sage" style="margin-bottom:0.5rem;">CIRCULAR LUXURY</span>
+              <h3 style="color:var(--accent-sage); font-family:var(--font-display); font-size:1.45rem; letter-spacing:0.08em; margin-bottom:0.4rem;">ELLE</h3>
+              <p style="font-size:0.86rem; font-style:italic; color:var(--text-secondary);">"Setting the gold standard for circular designer fashion."</p>
+            </div>
+          </article>
+
+          <!-- Press 3: Harper's Bazaar -->
+          <article class="amenity-card" style="text-align:center;">
+            <div class="amenity-card-media">
+              <img src="assets/images/about/about-press-harpers.jpg" alt="Harper's Bazaar Curatorial Curation Feature">
+            </div>
+            <div class="amenity-card-body" style="align-items:center;">
+              <span class="badge badge-gold" style="margin-bottom:0.5rem;">CURATOR'S CHOICE</span>
+              <h3 style="color:var(--accent-coral); font-family:var(--font-display); font-size:1.3rem; letter-spacing:0.06em; margin-bottom:0.4rem;">HARPER'S BAZAAR</h3>
+              <p style="font-size:0.86rem; font-style:italic; color:var(--text-secondary);">"Forensic authentication meets extraordinary curatorial taste."</p>
+            </div>
+          </article>
+
+          <!-- Press 4: GQ -->
+          <article class="amenity-card" style="text-align:center;">
+            <div class="amenity-card-media">
+              <img src="assets/images/about/about-press-gq.jpg" alt="GQ Vintage Horology & Timepieces Feature">
+            </div>
+            <div class="amenity-card-body" style="align-items:center;">
+              <span class="badge badge-dark" style="margin-bottom:0.5rem;">VAULT WATCHES</span>
+              <h3 style="color:var(--text-primary); font-family:var(--font-display); font-size:1.45rem; letter-spacing:0.08em; margin-bottom:0.4rem;">GQ</h3>
+              <p style="font-size:0.86rem; font-style:italic; color:var(--text-secondary);">"The most trustworthy place to buy and consign rare timepieces."</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Final About CTA -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="cta-banner">
+          <div>
+            <span class="badge badge-dark" style="margin-bottom: 1rem;">JOIN THE MOVEMENT</span>
+            <h2>Experience The Future of Curated Resale</h2>
+            <p>
+              Browse our live collection of verified runway drops or speak directly with our private concierge team.
+            </p>
+            <div class="cta-btn-row">
+              <a href="shop.html" class="btn btn-dark">Shop Live Drops →</a>
+              <a href="contact.html" class="btn btn-light" style="border:none;">Visit Flagship Salons</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modern Reusable Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div>
+          <a href="index.html" class="brand-link" style="margin-bottom: 0.85rem;">
+            <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+            <div class="brand-title">MODA<span>RESALE</span></div>
+          </a>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; max-width: 300px;">
+            Modern curated consignment boutique for authenticated luxury fashion, fine leather goods, and vintage jewelry.
+          </p>
+          <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+            <span class="badge badge-sage">100% Authentic</span>
+            <span class="badge badge-coral">Insured Global</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Explore Boutique</div>
+          <div class="footer-links">
+            <a href="shop.html" class="footer-link">Handbags & Clutches</a>
+            <a href="shop.html" class="footer-link">Designer Ready-To-Wear</a>
+            <a href="shop.html" class="footer-link">Fine Jewelry & Watches</a>
+            <a href="shop.html" class="footer-link">New Vault Arrivals</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Client Services</div>
+          <div class="footer-links">
+            <a href="consign.html" class="footer-link">Consign With Us</a>
+            <a href="authentication.html" class="footer-link">Authentication Lab</a>
+            <a href="about.html" class="footer-link">About Our Curators</a>
+            <a href="contact.html" class="footer-link">Salon Appointments</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Get Priority Vault Drops</div>
+          <p style="font-size: 0.84rem; color: var(--text-secondary);">
+            Subscribe to receive private 24-hour early access to rare runway archive drops.
+          </p>
+          <form class="footer-subscribe-form" onsubmit="event.preventDefault(); modaToast('Thank you for subscribing to private drops!');">
+            <input type="email" class="footer-subscribe-input" placeholder="Your email address..." required aria-label="Subscribe email">
+            <button type="submit" class="footer-subscribe-btn" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container">
+        © 2026 MODA RESALE INC. ALL RIGHTS RESERVED. CONTEMPORARY LUXURY CONSIGNMENT.
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="Return to top">↑</button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

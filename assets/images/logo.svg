@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Metallic Terracotta / Copper Gradients -->
+    <linearGradient id="copperLight" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#F7C8BC"/>
+      <stop offset="25%" stop-color="#E59985"/>
+      <stop offset="60%" stop-color="#C56A55"/>
+      <stop offset="100%" stop-color="#8F3E2B"/>
+    </linearGradient>
+
+    <linearGradient id="copperDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97F69"/>
+      <stop offset="45%" stop-color="#B85540"/>
+      <stop offset="85%" stop-color="#833322"/>
+      <stop offset="100%" stop-color="#5E2013"/>
+    </linearGradient>
+
+    <linearGradient id="copperRibbon" x1="0%" y1="30%" x2="100%" y2="70%">
+      <stop offset="0%" stop-color="#E5907B"/>
+      <stop offset="20%" stop-color="#FCE1D9"/>
+      <stop offset="50%" stop-color="#D97F69"/>
+      <stop offset="80%" stop-color="#9C4431"/>
+      <stop offset="100%" stop-color="#72291A"/>
+    </linearGradient>
+
+    <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFDFD6"/>
+      <stop offset="40%" stop-color="#E28E7A"/>
+      <stop offset="100%" stop-color="#9E432F"/>
+    </linearGradient>
+
+    <filter id="logoGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#5E2013" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#logoGlow)">
+    <!-- 1. Floating 4-Pointed Star Monogram Jewel -->
+    <path d="M 250,32 
+             C 250,56 257,63 281,63 
+             C 257,63 250,70 250,94 
+             C 250,70 243,63 219,63 
+             C 243,63 250,56 250,32 Z" 
+          fill="url(#starGrad)"/>
+
+    <!-- 2. Left Main Wing / Stem of 'M' -->
+    <path d="M 112,118 
+             C 142,118 190,165 218,225 
+             L 262,320 
+             L 236,368 
+             L 142,185 
+             C 125,152 108,138 88,136 
+             C 90,126 100,118 112,118 Z" 
+          fill="url(#copperLight)"/>
+
+    <!-- 3. Right Inner Arch to Peak -->
+    <path d="M 262,320 
+             L 348,155 
+             C 368,118 392,118 418,118 
+             C 405,124 395,135 385,158 
+             L 315,310 
+             L 262,320 Z" 
+          fill="url(#copperLight)"/>
+
+    <!-- 4. Right Main Column / Down-Stroke -->
+    <path d="M 385,158 
+             C 395,135 405,124 418,118 
+             C 400,120 382,145 365,190 
+             L 340,260 
+             C 348,310 355,365 375,410 
+             C 388,438 412,442 425,442 
+             C 395,442 368,425 352,385 
+             C 336,340 330,285 328,230 
+             L 348,155 Z" 
+          fill="url(#copperDark)"/>
+
+    <!-- 5. Left Outer Flare / Base of M -->
+    <path d="M 142,185 
+             L 165,245 
+             C 148,275 132,325 130,370 
+             C 128,405 110,435 80,442 
+             C 65,445 52,430 52,408 
+             C 52,360 85,310 115,280 
+             L 142,185 Z" 
+          fill="url(#copperDark)"/>
+
+    <!-- 6. Foreground Organic Silk Ribbon Swash (Curving across front) -->
+    <!-- Ribbon Under-Turn -->
+    <path d="M 72,435 
+             C 50,425 45,395 56,365 
+             C 68,335 98,300 135,275 
+             C 112,305 92,345 88,380 
+             C 85,405 95,420 118,425 
+             C 102,432 85,438 72,435 Z" 
+          fill="url(#copperDark)"/>
+
+    <!-- Ribbon Main Sweeping Front Face -->
+    <path d="M 56,365 
+             C 72,325 112,280 168,280 
+             C 215,280 255,325 292,382 
+             C 328,438 368,465 415,465 
+             C 358,465 310,432 272,375 
+             C 238,322 205,288 165,288 
+             C 120,288 85,320 68,360 
+             C 62,370 58,375 56,365 Z" 
+          fill="url(#copperRibbon)"/>
+
+    <!-- Ribbon Highlight Edge -->
+    <path d="M 68,360 
+             C 85,320 120,288 165,288 
+             C 205,288 238,322 272,375 
+             C 310,432 358,465 415,465 
+             C 395,465 365,455 340,430 
+             C 300,390 265,340 230,305 
+             C 195,275 155,275 118,290 
+             C 88,305 72,335 68,360 Z" 
+          fill="#FFF2ED" 
+          opacity="0.35"/>
+  </g>
+</svg>

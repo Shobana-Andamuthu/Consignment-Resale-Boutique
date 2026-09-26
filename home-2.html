@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Moda Resale — Home 2: Trending Vault, Just In Arrivals, and 4-Step Consignment.">
+  <title>Moda Resale — Home 2: Trending Vault & Consignment Hub</title>
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar-inner">
+      
+      <a href="index.html" class="brand-link" aria-label="Moda Resale Home">
+        <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+        <div class="brand-text">
+          <div class="brand-title">MODA<span>RESALE</span></div>
+          <div class="brand-sub">Curated Luxury Archive</div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <div class="nav-dropdown">
+          <a href="index.html" class="nav-link dropdown-toggle active">
+            Home
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="dropdown-card-menu">
+            <a href="index.html" class="dropdown-card-item">
+              <span class="dropdown-card-title">Home 1 — Classic Boutique</span>
+              <span class="dropdown-card-desc">Curated drops & interactive valuation</span>
+            </a>
+            <a href="home-2.html" class="dropdown-card-item active">
+              <span class="dropdown-card-title">Home 2 — Trending Vault</span>
+              <span class="dropdown-card-desc">Editorial split hero & consignment steps</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="consign.html" class="nav-link">Consign With Us</a>
+        <a href="authentication.html" class="nav-link">Authentication</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button type="button" class="icon-btn" data-action="toggle-dir" aria-label="Toggle Direction" title="Switch LTR/RTL">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 8h16M16 4l4 4-4 4M20 16H4M8 12l-4 4 4 4"/>
+          </svg>
+        </button>
+
+        <button type="button" class="icon-btn" data-action="toggle-theme" aria-label="Toggle Theme" title="Switch Light/Dark Mode">
+          <span class="theme-icon-slot"></span>
+        </button>
+
+        <a href="wishlist.html" class="icon-btn" aria-label="Saved Wishlist" title="View Wishlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 0 5.5 5.5 0 0 0 0 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <b class="wishlist-count">0</b>
+        </a>
+
+        <a href="cart.html" class="icon-btn" aria-label="Shopping Bag" title="Shopping Bag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <b class="cart-count">0</b>
+        </a>
+
+        <div class="header-auth-pills">
+          <a href="login.html" class="pill-btn">Login</a>
+          <a href="register.html" class="pill-btn pill-btn-solid">Sign Up</a>
+        </div>
+
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open Navigation">☰</button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-head">
+      <a href="index.html" class="brand-link">
+        <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+        <div class="brand-title">MODA<span>RESALE</span></div>
+      </a>
+      <button type="button" class="icon-btn" id="mobileDrawerClose" aria-label="Close Navigation">✕</button>
+    </div>
+
+    <!-- Mobile Quick Commerce Bar (Wishlist & Cart Bag) -->
+    <div class="mobile-quick-actions">
+      <a href="wishlist.html" class="mobile-quick-item" title="View Wishlist">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 0 5.5 5.5 0 0 0 0 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <span>Wishlist (<b class="wishlist-count">0</b>)</span>
+      </a>
+      <a href="cart.html" class="mobile-quick-item" title="View Shopping Bag">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span>Bag (<b class="cart-count">0</b>)</span>
+      </a>
+    </div>
+
+    <nav class="mobile-drawer-links">
+      <div class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link mobile-dropdown-toggle">
+          <span>Home Pages</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="mobile-sub-menu">
+          <a href="index.html" class="mobile-sub-link">Home 1 — Classic Boutique</a>
+          <a href="home-2.html" class="mobile-sub-link">Home 2 — Trending Vault</a>
+        </div>
+      </div>
+      <a href="shop.html" class="mobile-nav-link">Shop Collection</a>
+      <a href="consign.html" class="mobile-nav-link">Consign With Us</a>
+      <a href="authentication.html" class="mobile-nav-link">Authentication</a>
+      <a href="about.html" class="mobile-nav-link">About Maison</a>
+      <a href="contact.html" class="mobile-nav-link">Contact & Salons</a>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <div class="mobile-toggles-grid">
+        <button type="button" class="btn btn-light btn-sm" data-action="toggle-theme" aria-label="Toggle Theme">
+          <span class="theme-icon-slot">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </span>
+          <span>Theme</span>
+        </button>
+        <button type="button" class="btn btn-light btn-sm" data-action="toggle-dir" aria-label="Toggle Direction">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 8h16M16 4l4 4-4 4M20 16H4M8 12l-4 4 4 4"/>
+          </svg>
+          <span>Direction</span>
+        </button>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; width:100%;">
+        <a href="login.html" class="btn btn-light btn-sm" style="text-align:center;">Login</a>
+        <a href="register.html" class="btn btn-gradient btn-sm" style="text-align:center;">Sign Up</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content: Home 2 (8 Different Sections) -->
+  <main id="mainContent">
+
+    <!-- SECTION 1: Redesigned Archive Vault Editorial Hero -->
+    <section class="hero-vault-shell">
+      <div class="container">
+        
+        <!-- Live Ticker / Vault Indicator Bar -->
+        <div class="vault-ticker-bar">
+          <div class="vault-live-pill">
+            <span class="vault-live-dot"></span>
+            <span>LIVE VAULT STATUS</span>
+          </div>
+          <span class="vault-ticker-msg">42 Verified Haute Horlogerie & Runway Icons Released Today</span>
+          <div class="vault-ticker-tags">
+            <span class="vault-tag">Hermes Birkin 30</span>
+            <span class="vault-tag">Rolex Kermit</span>
+            <span class="vault-tag">Cartier Clou</span>
+          </div>
+        </div>
+
+        <!-- Asymmetric 2-Column Editorial Grid -->
+        <div class="hero-vault-main-grid">
+          
+          <!-- Left: Editorial Typography + Interactive Quick Search -->
+          <div class="hero-vault-copy">
+            <p class="kicker kicker-sage">✦ &nbsp; THE ARCHIVE VAULT · CURATED ESTATE INVENTORY</p>
+            <h1>The Private Vault For <span class="vault-accent-glow">Coveted Runway</span> & Collector Icons</h1>
+            <p class="vault-desc">
+              Exclusive VIP access to forensic-verified collector consignments, rare archival colorways, and timeless haute horlogerie from private estates worldwide.
+            </p>
+
+            <!-- Quick Vault Search Bar -->
+            <form class="hero-vault-quick-search" action="shop.html" method="get" onsubmit="event.preventDefault(); window.location.href='shop.html';">
+              <div class="vault-search-input-wrap">
+                <img src="assets/images/logo.svg" alt="Moda Search" width="22" height="22" style="flex-shrink:0; margin-left: 0.5rem; margin-right: 0.2rem;">
+                <input type="text" placeholder="Search Birkin 30, Lady Dior, Cartier Clou..." aria-label="Search Vault Collections">
+              </div>
+              <button type="submit" class="btn btn-dark vault-search-btn">Access Vault →</button>
+            </form>
+
+            <!-- Popular Shortcuts -->
+            <div class="vault-popular-shortcuts">
+              <span class="vault-trending-label">Trending:</span>
+              <a href="shop.html" class="vault-tag">Hermes</a>
+              <span class="vault-dot" aria-hidden="true">&bull;</span>
+              <a href="shop.html" class="vault-tag">Rolex</a>
+              <span class="vault-dot" aria-hidden="true">&bull;</span>
+              <a href="shop.html" class="vault-tag">Cartier</a>
+              <span class="vault-dot" aria-hidden="true">&bull;</span>
+              <a href="shop.html" class="vault-tag">Chanel</a>
+              <span class="vault-dot" aria-hidden="true">&bull;</span>
+              <a href="shop.html" class="vault-tag">Lady Dior</a>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="hero-vault-actions">
+              <a href="shop.html" class="btn btn-gradient">Explore 16 Vault Pieces →</a>
+              <a href="consign.html" class="btn btn-outline">Instant VIP Valuation</a>
+            </div>
+          </div>
+
+          <!-- Right: Visual Editorial Pane with Glassmorphic Floating Overlays -->
+          <div class="hero-vault-visual-pane">
+            <img src="assets/images/hero/home2_hero_split.jpg" alt="High fashion couple in chic trench coats outside modern resale salon">
+            
+            <div class="vault-floating-top-badge">
+              ✦ EDITORIAL SPOTLIGHT
+            </div>
+
+            <div class="vault-floating-card">
+              <div class="vault-floating-card-info">
+                <small>JUST ARRIVED TODAY</small>
+                <b>Celine Triomphe Tan Calfskin</b>
+                <span>Pristine Grade A · Verified by Dual AI Lab</span>
+              </div>
+              <div class="vault-floating-card-price">
+                <span class="price-val">€2,450</span>
+                <span class="price-orig">€3,800</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom 4-Pillar Assurance Strip -->
+        <div class="hero-vault-metrics-grid">
+          <div class="vault-metric-box">
+            <div class="vault-metric-num">$4.8M+</div>
+            <div class="vault-metric-label">Estate Inventory Valued</div>
+          </div>
+          <div class="vault-metric-box">
+            <div class="vault-metric-num">100%</div>
+            <div class="vault-metric-label">Forensic Authenticity Guarantee</div>
+          </div>
+          <div class="vault-metric-box">
+            <div class="vault-metric-num">24 Hours</div>
+            <div class="vault-metric-label">Express Valuation & Payout</div>
+          </div>
+          <div class="vault-metric-box">
+            <div class="vault-metric-num">4.98 / 5.0</div>
+            <div class="vault-metric-label">Client Trust Rating</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: Trending / Just In Products (3-Column Rich Cards) -->
+    <section class="section-spacing" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="section-title-row">
+          <div>
+            <p class="kicker">TODAY'S VAULT PICKS</p>
+            <h2>Trending & Just In Pieces</h2>
+          </div>
+          <a href="shop.html" class="btn btn-outline">View All Trending →</a>
+        </div>
+
+        <div class="product-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <!-- Product 1 -->
+          <article class="product-card">
+            <div class="product-photo-wrap">
+              <img src="assets/images/products/home2_prod_celine.jpg" alt="Celine Triomphe Tan Bag">
+              <span class="product-tag badge badge-coral">Just In</span>
+              <button type="button" class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+            </div>
+            <div class="product-info">
+              <span class="product-cat">Handbags · Celine</span>
+              <h3 class="product-name">Celine Triomphe Medium Natural Calfskin</h3>
+              <span class="product-condition">Condition: Pristine Grade 1 · Full Set</span>
+              <div class="product-bottom-row">
+                <div class="product-price-box">
+                  <small>RESALE PRICE</small>
+                  <b>$3,650</b>
+                </div>
+                <button type="button" class="add-cart-btn" data-name="Celine Triomphe Bag">Add to Bag +</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product-card">
+            <div class="product-photo-wrap">
+              <img src="assets/images/products/home2_prod_rolex.jpg" alt="Rolex Datejust Two-Tone">
+              <span class="product-tag badge badge-sage">Rare Watch</span>
+              <button type="button" class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+            </div>
+            <div class="product-info">
+              <span class="product-cat">Timepieces · Rolex</span>
+              <h3 class="product-name">Rolex Datejust 36mm Jubilee Two-Tone</h3>
+              <span class="product-condition">Condition: Excellent · 18k Yellow Gold & Steel</span>
+              <div class="product-bottom-row">
+                <div class="product-price-box">
+                  <small>RESALE PRICE</small>
+                  <b>$11,800</b>
+                </div>
+                <button type="button" class="add-cart-btn" data-name="Rolex Datejust">Add to Bag +</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="product-card">
+            <div class="product-photo-wrap">
+              <img src="assets/images/products/home2_prod_trench_coat.jpg" alt="Burberry Heritage Gabardine Trench Coat">
+              <span class="product-tag badge badge-dark">Popular</span>
+              <button type="button" class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+            </div>
+            <div class="product-info">
+              <span class="product-cat">Apparel · Burberry</span>
+              <h3 class="product-name">Burberry Heritage Kensington Gabardine Trench Coat</h3>
+              <span class="product-condition">Condition: Pristine · Size UK 8 / US 4</span>
+              <div class="product-bottom-row">
+                <div class="product-price-box">
+                  <small>RESALE PRICE</small>
+                  <b>$1,450</b>
+                </div>
+                <button type="button" class="add-cart-btn" data-name="Burberry Trench Coat">Add to Bag +</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Different Category Navigation (Curated Image Cards) -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="center-title">
+          <p class="kicker">EXPLORE BY ARCHIVE TYPE</p>
+          <h2>Curated Department Navigation</h2>
+          <p>Find your next luxury investment piece curated by world-class specialists.</p>
+        </div>
+
+        <div class="home2-cat-grid">
+          <!-- Card 1: Handbags & Leather Goods -->
+          <a href="shop.html" class="home2-cat-card">
+            <div class="home2-cat-media">
+              <img src="assets/images/categories/home2_cat_handbags.jpg" alt="Iconic Leather Goods and Rare Handbags">
+              <span class="home2-cat-count-badge">480+ Pieces</span>
+            </div>
+            <div class="home2-cat-body">
+              <span class="home2-cat-kicker">CURATED ARCHIVES</span>
+              <h3 class="home2-cat-title">Iconic Leather Goods</h3>
+              <p class="home2-cat-desc">Birkin, Kelly, Classic Flap, travel trunks & rare collector Baguette editions.</p>
+              <div class="home2-cat-cta">
+                <span>Explore Handbags</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 2: Apparel & Ready-To-Wear -->
+          <a href="shop.html" class="home2-cat-card">
+            <div class="home2-cat-media">
+              <img src="assets/images/categories/home2_cat_apparel.png" alt="Designer Ready-To-Wear and Couture Silhouettes">
+              <span class="home2-cat-count-badge">320+ Pieces</span>
+            </div>
+            <div class="home2-cat-body">
+              <span class="home2-cat-kicker">HAUTE COUTURE</span>
+              <h3 class="home2-cat-title">Designer Ready-To-Wear</h3>
+              <p class="home2-cat-desc">Runway blazers, embroidered jackets, cashmere coats & silk couture gowns.</p>
+              <div class="home2-cat-cta">
+                <span>Explore Apparel</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 3: Jewels & Fine Jewelry -->
+          <a href="shop.html" class="home2-cat-card">
+            <div class="home2-cat-media">
+              <img src="assets/images/categories/home2_cat_jewelry.jpg" alt="Fine Jewels and Haute Joaillerie">
+              <span class="home2-cat-count-badge">220+ Pieces</span>
+            </div>
+            <div class="home2-cat-body">
+              <span class="home2-cat-kicker">HAUTE JOAILLERIE</span>
+              <h3 class="home2-cat-title">Fine Jewels & Watches</h3>
+              <p class="home2-cat-desc">Layered pearl necklaces, diamond pendants, gold chokers & timepieces.</p>
+              <div class="home2-cat-cta">
+                <span>Explore Jewels</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 4: Accessories & Salon Accents -->
+          <a href="shop.html" class="home2-cat-card">
+            <div class="home2-cat-media">
+              <img src="assets/images/categories/home2_cat_accessories.jpg" alt="Luxury Accessories and Lifestyle Accents">
+              <span class="home2-cat-count-badge">180+ Pieces</span>
+            </div>
+            <div class="home2-cat-body">
+              <span class="home2-cat-kicker">SALON ACCENTS</span>
+              <h3 class="home2-cat-title">Luxury Accessories</h3>
+              <p class="home2-cat-desc">Silk twill scarves, designer belts, eyewear, leather pouches & lifestyle accents.</p>
+              <div class="home2-cat-cta">
+                <span>Explore Accessories</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: How Consignment Works (4 Compact Process Cards) -->
+    <section class="section-spacing" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="center-title">
+          <p class="kicker">4-STEP SIMPLE PROCESS</p>
+          <h2>How Selling & Consignment Works</h2>
+          <p>We handle photography, forensic authentication, marketing, and insured delivery.</p>
+        </div>
+
+        <div class="benefits-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+          <!-- Step 1 -->
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column; text-align:left;">
+            <span class="badge badge-coral" style="margin-bottom:0.75rem;">STEP 01</span>
+            <h3>1. Submit Item Details</h3>
+            <p>Upload quick photos of your designer piece online or drop off at any flagship salon.</p>
+          </article>
+
+          <!-- Step 2 -->
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column; text-align:left;">
+            <span class="badge badge-sage" style="margin-bottom:0.75rem;">STEP 02</span>
+            <h3>2. Instant Valuation</h3>
+            <p>Receive an upfront market valuation quote and choose direct cash payout or consignment.</p>
+          </article>
+
+          <!-- Step 3 -->
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column; text-align:left;">
+            <span class="badge badge-dark" style="margin-bottom:0.75rem;">STEP 03</span>
+            <h3>3. Dual Authentication</h3>
+            <p>Our specialists verify leather grain, hardware stamps, and issuance of digital certificate.</p>
+          </article>
+
+          <!-- Step 4 -->
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column; text-align:left;">
+            <span class="badge badge-coral" style="margin-bottom:0.75rem;">STEP 04</span>
+            <h3>4. Fast Direct Payout</h3>
+            <p>Receive your funds via instant bank wire within 48 hours of your piece being sold.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Forensic Trust & Authentication Lab Showcase -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="curate-lab-shell" style="background:var(--bg-surface);">
+          <div class="lab-grid">
+            <div>
+              <p class="kicker">FORENSIC PRECISION</p>
+              <h2>Microscopic Stitch & Hardware Auditing</h2>
+              <p>
+                We leave zero room for doubt. Every luxury item undergoes AI spectral analysis, date code cross-checking, and master authenticator inspection.
+              </p>
+              <div style="display:flex; flex-direction:column; gap:0.65rem; margin-top:1.25rem;">
+                <div style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; font-weight:700;">
+                  <span style="color:var(--accent-terracotta);">✓</span> AI Spectral Leather Texture Mapping
+                </div>
+                <div style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; font-weight:700;">
+                  <span style="color:var(--accent-terracotta);">✓</span> Engraving Depth & Font Typography Inspection
+                </div>
+                <div style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; font-weight:700;">
+                  <span style="color:var(--accent-terracotta);">✓</span> Cryptographic Physical NFC Authenticity Card
+                </div>
+              </div>
+            </div>
+
+            <div class="lab-builder-card" style="background:var(--bg-card); text-align:center;">
+              <span class="badge badge-sage" style="margin-bottom:1rem;">100% MONEY-BACK LIFETIME GUARANTEE</span>
+              <h3 style="font-size:1.35rem; margin-bottom:0.5rem;">The Moda Resale Seal</h3>
+              <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:1.5rem;">
+                Every client receives an encrypted authenticity certificate valid worldwide.
+              </p>
+              <a href="authentication.html" class="btn btn-dark btn-sm">Explore Authentication Lab →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Collector Membership Privileges -->
+    <section class="section-spacing" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="center-title">
+          <p class="kicker">COLLECTOR CIRCLE</p>
+          <h2>VIP Client Privileges</h2>
+          <p>Join our private clientele for personalized sourcing and private salon viewings.</p>
+        </div>
+
+        <div class="benefits-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column; padding:0; overflow:hidden; border: 1.5px solid var(--border-color);">
+            <div style="height:190px; width:100%; overflow:hidden;">
+              <img src="assets/images/vip/home2_vip_early_drops.jpg" alt="Priority 24h Early Drops" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+            <div style="padding:1.4rem;">
+              <span class="badge badge-coral" style="margin-bottom:0.6rem; font-size:0.68rem;">EARLY ACCESS</span>
+              <h3 style="font-size:1.15rem; margin-bottom:0.4rem;">Priority 24h Early Drops</h3>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.5;">First access to high-demand Birkin, Kelly, and vintage runway collections before public release.</p>
+            </div>
+          </article>
+
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column; padding:0; overflow:hidden; border: 1.5px solid var(--border-color);">
+            <div style="height:190px; width:100%; overflow:hidden;">
+              <img src="assets/images/vip/home2_vip_private_salon.jpg" alt="Private Salon Appointments" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+            <div style="padding:1.4rem;">
+              <span class="badge badge-sage" style="margin-bottom:0.6rem; font-size:0.68rem;">CONCIERGE SERVICE</span>
+              <h3 style="font-size:1.15rem; margin-bottom:0.4rem;">Private Salon Appointments</h3>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.5;">Enjoy private viewing salons with champagne concierge service in Paris, New York, and London.</p>
+            </div>
+          </article>
+
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column; padding:0; overflow:hidden; border: 1.5px solid var(--border-color);">
+            <div style="height:190px; width:100%; overflow:hidden;">
+              <img src="assets/images/vip/home2_vip_white_glove.jpg" alt="Complimentary White-Glove Transit" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+            <div style="padding:1.4rem;">
+              <span class="badge badge-dark" style="margin-bottom:0.6rem; font-size:0.68rem;">SECURE LOGISTICS</span>
+              <h3 style="font-size:1.15rem; margin-bottom:0.4rem;">Complimentary White-Glove Transit</h3>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.5;">Fully insured courier pickup directly from your home with custom luxury protective boxes.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Testimonials & Collector Reviews -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="center-title">
+          <p class="kicker">VERIFIED REVIEWS</p>
+          <h2>Trusted By Top Fashion Collectors</h2>
+          <p>Read experiences from our international clients and luxury consignors.</p>
+        </div>
+
+        <div class="benefits-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column; padding:1.5rem; border: 1.5px solid var(--border-color);">
+            <div style="display:flex; align-items:center; gap:0.9rem; margin-bottom:1rem;">
+              <img src="assets/images/reviews/home2_review_elena.jpg" alt="Elena V." style="width:52px; height:52px; border-radius:50%; object-fit:cover; flex-shrink:0; border:2px solid var(--accent-terracotta);">
+              <div>
+                <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary); font-family:var(--font-heading);">Elena V.</div>
+                <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em;">Verified Consignor · Paris</div>
+              </div>
+            </div>
+            <div class="review-stars" style="color:#d97706; font-size:0.95rem; margin-bottom:0.75rem;">★★★★★</div>
+            <p style="font-size:0.9rem; font-style:italic; line-height:1.55; color:var(--text-secondary); margin-bottom:0;">
+              "I consigned my Chanel Classic Flap and was amazed by how smooth the entire process was. The payout was 15% higher than other platforms."
+            </p>
+          </article>
+
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column; padding:1.5rem; border: 1.5px solid var(--border-color);">
+            <div style="display:flex; align-items:center; gap:0.9rem; margin-bottom:1rem;">
+              <img src="assets/images/reviews/home2_review_sophia.jpg" alt="Sophia K." style="width:52px; height:52px; border-radius:50%; object-fit:cover; flex-shrink:0; border:2px solid var(--accent-terracotta);">
+              <div>
+                <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary); font-family:var(--font-heading);">Sophia K.</div>
+                <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em;">VIP Collector · New York</div>
+              </div>
+            </div>
+            <div class="review-stars" style="color:#d97706; font-size:0.95rem; margin-bottom:0.75rem;">★★★★★</div>
+            <p style="font-size:0.9rem; font-style:italic; line-height:1.55; color:var(--text-secondary); margin-bottom:0;">
+              "Purchased my dream Birkin 25. The condition was immaculate, exactly as graded, and the NFC certificate gives complete peace of mind."
+            </p>
+          </article>
+
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column; padding:1.5rem; border: 1.5px solid var(--border-color);">
+            <div style="display:flex; align-items:center; gap:0.9rem; margin-bottom:1rem;">
+              <img src="assets/images/reviews/home2_review_marcus.jpg" alt="Marcus T." style="width:52px; height:52px; border-radius:50%; object-fit:cover; flex-shrink:0; border:2px solid var(--accent-terracotta);">
+              <div>
+                <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary); font-family:var(--font-heading);">Marcus T.</div>
+                <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em;">Private Client · London</div>
+              </div>
+            </div>
+            <div class="review-stars" style="color:#d97706; font-size:0.95rem; margin-bottom:0.75rem;">★★★★★</div>
+            <p style="font-size:0.9rem; font-style:italic; line-height:1.55; color:var(--text-secondary); margin-bottom:0;">
+              "Their London salon appointment was extraordinary. Great curation, expert curators, and zero pressure. A true quiet luxury experience."
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: Modern Final CTA Banner -->
+    <section class="section-spacing" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta-banner" style="background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-terracotta-dark) 100%);">
+          <div>
+            <span class="badge badge-coral" style="margin-bottom: 1rem;">INSTANT CONSIGNMENT APPRAISAL</span>
+            <h2>Ready to Unlock Value from Your Designer Wardrobe?</h2>
+            <p>
+              Get started in minutes with our transparent valuation tool or schedule a private white-glove collection appointment.
+            </p>
+            <div class="cta-btn-row">
+              <a href="consign.html" class="btn btn-gradient">Start Consignment Submission →</a>
+              <a href="contact.html" class="btn btn-light">Contact Concierge</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modern Reusable Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div>
+          <a href="index.html" class="brand-link" style="margin-bottom: 0.85rem;">
+            <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+            <div class="brand-title">MODA<span>RESALE</span></div>
+          </a>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; max-width: 300px;">
+            Modern curated consignment boutique for authenticated luxury fashion, fine leather goods, and vintage jewelry.
+          </p>
+          <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+            <span class="badge badge-sage">100% Authentic</span>
+            <span class="badge badge-coral">Insured Global</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Explore Boutique</div>
+          <div class="footer-links">
+            <a href="shop.html" class="footer-link">Handbags & Clutches</a>
+            <a href="shop.html" class="footer-link">Designer Ready-To-Wear</a>
+            <a href="shop.html" class="footer-link">Fine Jewelry & Watches</a>
+            <a href="shop.html" class="footer-link">New Vault Arrivals</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Client Services</div>
+          <div class="footer-links">
+            <a href="consign.html" class="footer-link">Consign With Us</a>
+            <a href="authentication.html" class="footer-link">Authentication Lab</a>
+            <a href="about.html" class="footer-link">About Our Curators</a>
+            <a href="contact.html" class="footer-link">Salon Appointments</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Get Priority Vault Drops</div>
+          <p style="font-size: 0.84rem; color: var(--text-secondary);">
+            Subscribe to receive private 24-hour early access to rare runway archive drops.
+          </p>
+          <form class="footer-subscribe-form" onsubmit="event.preventDefault(); modaToast('Thank you for subscribing to private drops!');">
+            <input type="email" class="footer-subscribe-input" placeholder="Your email address..." required aria-label="Subscribe email">
+            <button type="submit" class="footer-subscribe-btn" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container">
+        © 2026 MODA RESALE INC. ALL RIGHTS RESERVED. CONTEMPORARY LUXURY CONSIGNMENT.
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="Return to top">↑</button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

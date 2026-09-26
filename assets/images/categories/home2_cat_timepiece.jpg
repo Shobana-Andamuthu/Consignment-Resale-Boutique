@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad_Patek_Philippe_Calatrava" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5ECE1"/>
+      <stop offset="100%" stop-color="#E98570"/>
+    </linearGradient>
+    <filter id="shadow_Patek_Philippe_Calatrava" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#302521" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="800" height="800" fill="url(#grad_Patek_Philippe_Calatrava)"/>
+  <circle cx="400" cy="360" r="240" fill="#FFFFFF" fill-opacity="0.65" filter="url(#shadow_Patek_Philippe_Calatrava)"/>
+  <g transform="translate(310, 270) scale(3.8)" stroke="#302521" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="7"/><polyline points="12 9 12 12 13.5 13.5"/><path d="M16.51 17.35l-.35 3.83a2 2 0 01-2 1.82H9.83a2 2 0 01-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 019.84 1h4.33a2 2 0 012 1.82l.35 3.83"/>
+  </g>
+  <text x="400" y="560" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="34" font-weight="800" fill="#302521" text-anchor="middle" letter-spacing="1.2">Patek Philippe Calatrava</text>
+  <text x="400" y="605" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="20" font-weight="700" fill="#C96F5A" text-anchor="middle" letter-spacing="3">18K ROSE GOLD</text>
+  <text x="400" y="640" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="600" fill="#A99588" text-anchor="middle" letter-spacing="2">MODA RESALE ARCHIVE</text>
+</svg>

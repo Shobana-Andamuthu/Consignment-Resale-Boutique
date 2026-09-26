@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Review your curated luxury bag, reserve authenticated designer apparel, and complete secure insured checkout at Moda Resale.">
+  <title>Shopping Bag — Moda Resale | Authenticated Luxury Consignment</title>
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Header / Navbar -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar-inner">
+      
+      <a href="index.html" class="brand-link" aria-label="Moda Resale Home">
+        <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+        <div class="brand-text">
+          <div class="brand-title">MODA<span>RESALE</span></div>
+          <div class="brand-sub">Curated Luxury Archive</div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <div class="nav-dropdown">
+          <a href="index.html" class="nav-link dropdown-toggle">
+            Home
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="dropdown-card-menu">
+            <a href="index.html" class="dropdown-card-item">
+              <span class="dropdown-card-title">Home 1 — Classic Boutique</span>
+              <span class="dropdown-card-desc">Curated drops & interactive valuation</span>
+            </a>
+            <a href="home-2.html" class="dropdown-card-item">
+              <span class="dropdown-card-title">Home 2 — Trending Vault</span>
+              <span class="dropdown-card-desc">Editorial split hero & consignment steps</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="consign.html" class="nav-link">Consign With Us</a>
+        <a href="authentication.html" class="nav-link">Authentication</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button type="button" class="icon-btn" data-action="toggle-dir" aria-label="Toggle Direction" title="Switch LTR/RTL">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 8h16M16 4l4 4-4 4M20 16H4M8 12l-4 4 4 4"/>
+          </svg>
+        </button>
+
+        <button type="button" class="icon-btn" data-action="toggle-theme" aria-label="Toggle Theme" title="Switch Light/Dark Mode">
+          <span class="theme-icon-slot"></span>
+        </button>
+
+        <a href="wishlist.html" class="icon-btn" aria-label="Saved Wishlist" title="View Wishlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 0 5.5 5.5 0 0 0 0 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <b class="wishlist-count">0</b>
+        </a>
+
+        <a href="cart.html" class="icon-btn active" aria-label="Shopping Bag" title="Shopping Bag" style="background:var(--accent-terracotta); color:#fff; border-color:var(--accent-terracotta);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <b class="cart-count">0</b>
+        </a>
+
+        <div class="header-auth-pills">
+          <a href="login.html" class="pill-btn">Login</a>
+          <a href="register.html" class="pill-btn pill-btn-solid">Sign Up</a>
+        </div>
+
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open Navigation">☰</button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-head">
+      <a href="index.html" class="brand-link">
+        <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+        <div class="brand-title">MODA<span>RESALE</span></div>
+      </a>
+      <button type="button" class="icon-btn" id="mobileDrawerClose" aria-label="Close Navigation">✕</button>
+    </div>
+
+    <!-- Mobile Quick Commerce Bar (Wishlist & Cart Bag) -->
+    <div class="mobile-quick-actions">
+      <a href="wishlist.html" class="mobile-quick-item" title="View Wishlist">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 0 5.5 5.5 0 0 0 0 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <span>Wishlist (<b class="wishlist-count">0</b>)</span>
+      </a>
+      <a href="cart.html" class="mobile-quick-item active" title="View Shopping Bag" style="background:var(--accent-terracotta); color:#fff;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span>Bag (<b class="cart-count">0</b>)</span>
+      </a>
+    </div>
+
+    <nav class="mobile-drawer-links">
+      <div class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link mobile-dropdown-toggle">
+          <span>Home Pages</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="mobile-sub-menu">
+          <a href="index.html" class="mobile-sub-link">Home 1 — Classic Boutique</a>
+          <a href="home-2.html" class="mobile-sub-link">Home 2 — Trending Vault</a>
+        </div>
+      </div>
+      <a href="shop.html" class="mobile-nav-link">Shop Collection</a>
+      <a href="wishlist.html" class="mobile-nav-link">Saved Wishlist</a>
+      <a href="cart.html" class="mobile-nav-link active">Shopping Bag</a>
+      <a href="consign.html" class="mobile-nav-link">Consign With Us</a>
+      <a href="authentication.html" class="mobile-nav-link">Authentication</a>
+      <a href="about.html" class="mobile-nav-link">About Maison</a>
+      <a href="contact.html" class="mobile-nav-link">Contact & Salons</a>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <div class="mobile-toggles-grid">
+        <button type="button" class="btn btn-light btn-sm" data-action="toggle-theme" aria-label="Toggle Theme">
+          <span class="theme-icon-slot">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </span>
+          <span>Theme</span>
+        </button>
+        <button type="button" class="btn btn-light btn-sm" data-action="toggle-dir" aria-label="Toggle Direction">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 8h16M16 4l4 4-4 4M20 16H4M8 12l-4 4 4 4"/>
+          </svg>
+          <span>Direction</span>
+        </button>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; width:100%;">
+        <a href="login.html" class="btn btn-light btn-sm" style="text-align:center;">Login</a>
+        <a href="register.html" class="btn btn-gradient btn-sm" style="text-align:center;">Sign Up</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content: Cart Page -->
+  <main id="mainContent">
+
+    <!-- SECTION 1: Standardized Inner Hero -->
+    <section class="inner-page-hero">
+      <div class="container">
+        <div class="inner-hero-content">
+          <nav class="inner-hero-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="crumb-sep">/</span>
+            <a href="shop.html">Shop</a>
+            <span class="crumb-sep">/</span>
+            <span class="crumb-active">Shopping Bag</span>
+          </nav>
+          <p class="kicker">✧ &nbsp; CURATED CLIENT BAG</p>
+          <h1 class="inner-hero-title">Your Luxury <span style="color:var(--accent-terracotta);">Shopping Bag</span></h1>
+          <p class="inner-hero-subtitle">All orders include complimentary forensic authentication certificates, insured courier dispatch, and signature white-glove packaging.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Cart Items & Checkout Layout -->
+    <section class="section-spacing" style="padding-top: 1.5rem;">
+      <div class="container">
+
+        <div class="cart-layout" id="cartLayoutWrapper">
+          
+          <!-- LEFT: Items List -->
+          <div class="cart-items-column">
+            
+            <div class="cart-table-header">
+              <span>Item Description</span>
+              <span style="text-align:center;">Quantity</span>
+              <span style="text-align:right;">Total</span>
+            </div>
+
+            <!-- Dynamic Cart Items Container -->
+            <div id="cartItemsList" class="cart-items-list">
+              <!-- Rendered via JS -->
+            </div>
+
+            <!-- Cart Table Bottom Actions -->
+            <div class="cart-table-footer">
+              <a href="shop.html" class="btn btn-light btn-sm" style="display:inline-flex; align-items:center; gap:0.4rem;">
+                <span>← Continue Shopping</span>
+              </a>
+              <button type="button" class="btn btn-light btn-sm" id="clearCartBtn" style="color:#e11d48; border-color:rgba(225,29,72,0.2);">
+                Clear Bag ✕
+              </button>
+            </div>
+
+          </div>
+
+          <!-- RIGHT: Order Summary Card -->
+          <div class="cart-summary-column">
+            <div class="cart-summary-card">
+              <h3 class="cart-summary-title">Order Summary</h3>
+              
+              <div class="cart-summary-row">
+                <span>Bag Subtotal</span>
+                <span id="cartSubtotal">$0</span>
+              </div>
+
+              <div class="cart-summary-row">
+                <span>Insured Global Transit</span>
+                <span style="color:var(--accent-sage); font-weight:700;">Complimentary</span>
+              </div>
+
+              <div class="cart-summary-row">
+                <span>Forensic Authentication Fee</span>
+                <span style="color:var(--accent-sage); font-weight:700;">Included ($0)</span>
+              </div>
+
+              <div class="cart-summary-row discount-row" id="discountRow" style="display:none; color:var(--accent-coral);">
+                <span>Promotional VIP Discount (10%)</span>
+                <span id="discountAmount">-$0</span>
+              </div>
+
+              <!-- Promo Code Box -->
+              <div class="cart-promo-box">
+                <label for="promoInput">VIP Promo / Referral Code</label>
+                <div class="cart-promo-input-group">
+                  <input type="text" id="promoInput" class="form-control" placeholder="E.G. MODAVIP10">
+                  <button type="button" class="btn btn-dark" id="applyPromoBtn">Apply</button>
+                </div>
+                <small class="cart-promo-helper">Use code <b>MODAVIP10</b> for 10% off your curated order.</small>
+              </div>
+
+              <div class="cart-divider"></div>
+
+              <div class="cart-total-row">
+                <span>Estimated Total</span>
+                <span class="cart-total-price" id="cartGrandTotal">$0</span>
+              </div>
+
+              <button type="button" class="cart-checkout-btn" id="checkoutBtn">
+                PROCEED TO SECURE CHECKOUT &rarr;
+              </button>
+
+              <div style="display:flex; align-items:center; justify-content:center; gap:0.4rem; font-size:0.78rem; color:var(--text-muted); margin-top:0.75rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <span>256-Bit SSL Encrypted Payment Gateways</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Trust Badges Row (Full Container Width: 5 Assurances) -->
+        <div class="cart-trust-row" id="cartTrustRow">
+          <div class="cart-trust-item">
+            <span class="cart-trust-icon">🛡</span>
+            <div>
+              <h4>100% Forensic Authenticity</h4>
+              <p>Encrypted digital NFC certificate included with every luxury piece.</p>
+            </div>
+          </div>
+          <div class="cart-trust-item">
+            <span class="cart-trust-icon">✈</span>
+            <div>
+              <h4>Insured Priority Transit</h4>
+              <p>Full transit insurance with tracked signature delivery worldwide.</p>
+            </div>
+          </div>
+          <div class="cart-trust-item">
+            <span class="cart-trust-icon">✦</span>
+            <div>
+              <h4>White-Glove Packaging</h4>
+              <p>Archival dust bags and custom hardbox protection on every order.</p>
+            </div>
+          </div>
+          <div class="cart-trust-item">
+            <span class="cart-trust-icon">💎</span>
+            <div>
+              <h4>Lifetime Guarantee</h4>
+              <p>100% money-back lifetime verification warranty on all archives.</p>
+            </div>
+          </div>
+          <div class="cart-trust-item">
+            <span class="cart-trust-icon">🏛</span>
+            <div>
+              <h4>Private Salon Sourcing</h4>
+              <p>Complimentary personal styling & salon viewing appointments.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empty Cart State -->
+        <div id="cartEmptyState" class="empty-state-card" style="display:none;">
+          <div class="empty-state-icon">🛍</div>
+          <h2>Your Shopping Bag is Empty</h2>
+          <p>You haven't reserved any luxury archives yet. Discover authenticated designer handbags, apparel, and fine jewelry pieces in our curated catalog.</p>
+          <a href="shop.html" class="btn btn-gradient" style="margin-top:1.25rem;">Explore Curated Shop →</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modern Reusable Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div>
+          <a href="index.html" class="brand-link" style="margin-bottom: 0.85rem;">
+            <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+            <div class="brand-title">MODA<span>RESALE</span></div>
+          </a>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; max-width: 300px;">
+            Modern curated consignment boutique for authenticated luxury fashion, fine leather goods, and vintage jewelry.
+          </p>
+          <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+            <span class="badge badge-sage">100% Authentic</span>
+            <span class="badge badge-coral">Insured Global</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Explore Boutique</div>
+          <div class="footer-links">
+            <a href="shop.html" class="footer-link">Handbags & Clutches</a>
+            <a href="shop.html" class="footer-link">Designer Ready-To-Wear</a>
+            <a href="shop.html" class="footer-link">Fine Jewelry & Watches</a>
+            <a href="wishlist.html" class="footer-link">Saved Wishlist</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Client Services</div>
+          <div class="footer-links">
+            <a href="consign.html" class="footer-link">Consign With Us</a>
+            <a href="authentication.html" class="footer-link">Authentication Lab</a>
+            <a href="about.html" class="footer-link">About Our Curators</a>
+            <a href="contact.html" class="footer-link">Salon Appointments</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Get Priority Vault Drops</div>
+          <p style="font-size: 0.84rem; color: var(--text-secondary);">
+            Subscribe to receive private 24-hour early access to rare runway archive drops.
+          </p>
+          <form class="footer-subscribe-form" onsubmit="event.preventDefault(); modaToast('Thank you for subscribing to private drops!');">
+            <input type="email" class="footer-subscribe-input" placeholder="Your email address..." required aria-label="Subscribe email">
+            <button type="submit" class="footer-subscribe-btn" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container">
+        © 2026 MODA RESALE INC. ALL RIGHTS RESERVED. CONTEMPORARY LUXURY CONSIGNMENT.
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="Return to top">↑</button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

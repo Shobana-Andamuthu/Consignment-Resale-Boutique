@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Moda Resale — Book private viewing salons and drop-off appointments in Paris, New York, and London.">
+  <title>Moda Resale — Contact & Flagship Private Salons</title>
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar-inner">
+      
+      <a href="index.html" class="brand-link" aria-label="Moda Resale Home">
+        <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+        <div class="brand-text">
+          <div class="brand-title">MODA<span>RESALE</span></div>
+          <div class="brand-sub">Curated Luxury Archive</div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <div class="nav-dropdown">
+          <a href="index.html" class="nav-link dropdown-toggle">
+            Home
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="dropdown-card-menu">
+            <a href="index.html" class="dropdown-card-item">
+              <span class="dropdown-card-title">Home 1 — Classic Boutique</span>
+              <span class="dropdown-card-desc">Curated drops & interactive valuation</span>
+            </a>
+            <a href="home-2.html" class="dropdown-card-item">
+              <span class="dropdown-card-title">Home 2 — Trending Vault</span>
+              <span class="dropdown-card-desc">Editorial split hero & consignment steps</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="consign.html" class="nav-link">Consign With Us</a>
+        <a href="authentication.html" class="nav-link">Authentication</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button type="button" class="icon-btn" data-action="toggle-dir" aria-label="Toggle Direction" title="Switch LTR/RTL">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 8h16M16 4l4 4-4 4M20 16H4M8 12l-4 4 4 4"/>
+          </svg>
+        </button>
+
+        <button type="button" class="icon-btn" data-action="toggle-theme" aria-label="Toggle Theme" title="Switch Light/Dark Mode">
+          <span class="theme-icon-slot"></span>
+        </button>
+
+        <a href="wishlist.html" class="icon-btn" aria-label="Saved Wishlist" title="View Wishlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 0 5.5 5.5 0 0 0 0 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <b class="wishlist-count">0</b>
+        </a>
+
+        <a href="cart.html" class="icon-btn" aria-label="Shopping Bag" title="Shopping Bag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <b class="cart-count">0</b>
+        </a>
+
+        <div class="header-auth-pills">
+          <a href="login.html" class="pill-btn">Login</a>
+          <a href="register.html" class="pill-btn pill-btn-solid">Sign Up</a>
+        </div>
+
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open Navigation">☰</button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-head">
+      <a href="index.html" class="brand-link">
+        <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+        <div class="brand-title">MODA<span>RESALE</span></div>
+      </a>
+      <button type="button" class="icon-btn" id="mobileDrawerClose" aria-label="Close Navigation">✕</button>
+    </div>
+
+    <!-- Mobile Quick Commerce Bar (Wishlist & Cart Bag) -->
+    <div class="mobile-quick-actions">
+      <a href="wishlist.html" class="mobile-quick-item" title="View Wishlist">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 0 5.5 5.5 0 0 0 0 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <span>Wishlist (<b class="wishlist-count">0</b>)</span>
+      </a>
+      <a href="cart.html" class="mobile-quick-item" title="View Shopping Bag">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span>Bag (<b class="cart-count">0</b>)</span>
+      </a>
+    </div>
+
+    <nav class="mobile-drawer-links">
+      <div class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link mobile-dropdown-toggle">
+          <span>Home Pages</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="mobile-sub-menu">
+          <a href="index.html" class="mobile-sub-link">Home 1 — Classic Boutique</a>
+          <a href="home-2.html" class="mobile-sub-link">Home 2 — Trending Vault</a>
+        </div>
+      </div>
+      <a href="shop.html" class="mobile-nav-link">Shop Collection</a>
+      <a href="consign.html" class="mobile-nav-link">Consign With Us</a>
+      <a href="authentication.html" class="mobile-nav-link">Authentication</a>
+      <a href="about.html" class="mobile-nav-link">About Maison</a>
+      <a href="contact.html" class="mobile-nav-link active">Contact & Salons</a>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <div class="mobile-toggles-grid">
+        <button type="button" class="btn btn-light btn-sm" data-action="toggle-theme" aria-label="Toggle Theme">
+          <span class="theme-icon-slot">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </span>
+          <span>Theme</span>
+        </button>
+        <button type="button" class="btn btn-light btn-sm" data-action="toggle-dir" aria-label="Toggle Direction">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 8h16M16 4l4 4-4 4M20 16H4M8 12l-4 4 4 4"/>
+          </svg>
+          <span>Direction</span>
+        </button>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; width:100%;">
+        <a href="login.html" class="btn btn-light btn-sm" style="text-align:center;">Login</a>
+        <a href="register.html" class="btn btn-gradient btn-sm" style="text-align:center;">Sign Up</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content: Contact & Salons (7 Sections) -->
+  <main id="mainContent">
+
+    <!-- SECTION 1: Standardized Inner Hero -->
+    <section class="inner-page-hero">
+      <div class="container">
+        <div class="inner-hero-content">
+          <nav class="inner-hero-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="crumb-sep">/</span>
+            <span class="crumb-active">Contact & Salons</span>
+          </nav>
+          <p class="kicker">✧ &nbsp; GLOBAL CONCIERGE & SALONS</p>
+          <h1 class="inner-hero-title">Connect With Our <span style="color:var(--accent-terracotta);">Private Client Liaisons</span></h1>
+          <p class="inner-hero-subtitle">Visit our private viewing salons in Paris, New York, or London, or schedule a discreet white-glove consignment consultation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Flagship Boutique Salon Cards (3 Cities) & Live Interactive Map -->
+    <section class="section-spacing" style="padding-top: 1rem; padding-bottom: 3.5rem;">
+      <div class="container">
+        <div class="category-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          
+          <!-- Paris -->
+          <article class="benefit-card" style="flex-direction:column; background:var(--bg-surface);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; width:100%;">
+              <span class="badge badge-coral">FLAGSHIP SALON</span>
+              <span class="badge badge-sage">Open Daily</span>
+            </div>
+            <h3 style="font-size:1.35rem; margin-top:0.75rem; margin-bottom:0.35rem;">Paris — Place Vendome</h3>
+            <p style="font-size:0.88rem; margin-bottom:0.75rem;">
+              18 Place Vendome, 75001 Paris, France<br>
+              <strong>Hours:</strong> Mon–Sat: 10 AM – 8 PM | Sun: 11 AM – 6 PM
+            </p>
+            <div style="margin-top:auto; display:flex; flex-direction:column; gap:0.5rem; width:100%;">
+              <div style="display:flex; gap:0.5rem; width:100%;">
+                <a href="tel:+33142680000" class="btn btn-light btn-sm" style="flex-grow:1;">+33 1 42 68 00 00</a>
+                <button type="button" class="btn btn-gradient btn-sm" onclick="modaToast('Appointment request selected for Paris Salon!')">Book Salon</button>
+              </div>
+              <a href="https://www.google.com/maps/search/?api=1&query=18+Place+Vend%C3%B4me+75001+Paris+France" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width:100%; text-align:center;">
+                View on Google Maps ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- New York -->
+          <article class="benefit-card" style="flex-direction:column; background:var(--bg-surface);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; width:100%;">
+              <span class="badge badge-coral">SOHO SHOWROOM</span>
+              <span class="badge badge-sage">Open Daily</span>
+            </div>
+            <h3 style="font-size:1.35rem; margin-top:0.75rem; margin-bottom:0.35rem;">New York — SoHo</h3>
+            <p style="font-size:0.88rem; margin-bottom:0.75rem;">
+              142 Spring Street, New York, NY 10012<br>
+              <strong>Hours:</strong> Mon–Sat: 11 AM – 7 PM | Sun: 12 PM – 6 PM
+            </p>
+            <div style="margin-top:auto; display:flex; flex-direction:column; gap:0.5rem; width:100%;">
+              <div style="display:flex; gap:0.5rem; width:100%;">
+                <a href="tel:+12125550199" class="btn btn-light btn-sm" style="flex-grow:1;">+1 (212) 555-0199</a>
+                <button type="button" class="btn btn-gradient btn-sm" onclick="modaToast('Appointment request selected for NYC Salon!')">Book Salon</button>
+              </div>
+              <a href="https://www.google.com/maps/search/?api=1&query=142+Spring+Street+New+York+NY+10012" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width:100%; text-align:center;">
+                View on Google Maps ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- London -->
+          <article class="benefit-card" style="flex-direction:column; background:var(--bg-surface);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; width:100%;">
+              <span class="badge badge-coral">MAYFAIR SUITE</span>
+              <span class="badge badge-sage">Mon – Sat</span>
+            </div>
+            <h3 style="font-size:1.35rem; margin-top:0.75rem; margin-bottom:0.35rem;">London — Mayfair</h3>
+            <p style="font-size:0.88rem; margin-bottom:0.75rem;">
+              45 Mount Street, London W1K 2RX, United Kingdom<br>
+              <strong>Hours:</strong> Mon–Sat: 10 AM – 7 PM | Sun: By Appointment
+            </p>
+            <div style="margin-top:auto; display:flex; flex-direction:column; gap:0.5rem; width:100%;">
+              <div style="display:flex; gap:0.5rem; width:100%;">
+                <a href="tel:+442079460000" class="btn btn-light btn-sm" style="flex-grow:1;">+44 20 7946 0000</a>
+                <button type="button" class="btn btn-gradient btn-sm" onclick="modaToast('Appointment request selected for London Salon!')">Book Salon</button>
+              </div>
+              <a href="https://www.google.com/maps/search/?api=1&query=45+Mount+Street+London+W1K+2RX+United+Kingdom" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="width:100%; text-align:center;">
+                View on Google Maps ↗
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Interactive Google Map Section -->
+        <div style="margin-top: 2rem;">
+          <div class="salon-map-shell">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.25rem;">
+              <div>
+                <span class="badge badge-sage" style="margin-bottom:0.4rem;">LIVE LOCATION NAVIGATOR</span>
+                <h3 style="margin-bottom:0.2rem;">Interactive Flagship Map</h3>
+              </div>
+              <div class="salon-map-tabs">
+                <button type="button" class="salon-map-tab-btn is-active" onclick="switchSalonMap('paris', this)">Paris Salon</button>
+                <button type="button" class="salon-map-tab-btn" onclick="switchSalonMap('nyc', this)">New York SoHo</button>
+                <button type="button" class="salon-map-tab-btn" onclick="switchSalonMap('london', this)">London Mayfair</button>
+              </div>
+            </div>
+
+            <div class="salon-map-frame-wrapper">
+              <iframe id="salonMapFrame" src="https://maps.google.com/maps?q=18+Place+Vendome+Paris+France&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Moda Resale Flagship Salon Location Map" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="salon-map-footer">
+              <span id="salonMapAddress">📍 <strong>Current Location:</strong> 18 Place Vendome, 75001 Paris, France</span>
+              <a id="salonMapExternalLink" href="https://www.google.com/maps/search/?api=1&query=18+Place+Vendome+75001+Paris+France" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Open in Google Maps ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: Direct Concierge & Drop-Off Enquiry Form -->
+    <section class="section-spacing" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="curate-lab-shell" style="background:var(--bg-card); max-width:820px; margin:0 auto;">
+          <div class="center-title" style="margin-bottom:1.75rem;">
+            <p class="kicker">CONCIERGE DESK</p>
+            <h2>Send An Enquiry or Book An Appointment</h2>
+            <p>Our private client team will respond within 2 business hours.</p>
+          </div>
+
+          <form onsubmit="event.preventDefault(); modaToast('Message sent! A concierge specialist will contact you shortly.'); this.reset();">
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="contactName">Your Name</label>
+                <input type="text" id="contactName" class="form-control" placeholder="e.g. Julian Hayes" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail" class="form-control" placeholder="e.g. julian@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="salonLoc">Preferred Salon Location</label>
+                <select id="salonLoc" class="form-control" required>
+                  <option value="">Choose Salon...</option>
+                  <option>Paris (Place Vendome)</option>
+                  <option>New York (SoHo)</option>
+                  <option>London (Mayfair)</option>
+                  <option>Virtual Video Consultation</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="enquiryType">Enquiry Type</label>
+                <select id="enquiryType" class="form-control" required>
+                  <option value="">Select Purpose...</option>
+                  <option>Consignment Drop-Off & Appraisal</option>
+                  <option>Private Vault Viewing Appointment</option>
+                  <option>Bespoke Sourcing Request</option>
+                  <option>Authentication Certificate Inquiry</option>
+                  <option>General Client Assistance</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactMsg">Message / Specific Pieces You Wish to View</label>
+              <textarea id="contactMsg" class="form-control" placeholder="Please mention preferred appointment dates, times, or specific designer items..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gradient" style="width:100%; padding:0.85rem;">Send Message to Concierge →</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Direct Communication Channels -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="center-title" style="margin-bottom: 2rem;">
+          <p class="kicker">INSTANT CONTACT</p>
+          <h2>Direct VIP Communication Channels</h2>
+          <p>Dedicated confidential pathways for immediate assistance and valuations.</p>
+        </div>
+
+        <div class="vip-channels-grid">
+          
+          <!-- Channel 1: WhatsApp -->
+          <article class="vip-channel-card">
+            <div class="vip-channel-header">
+              <div class="benefit-icon-badge" style="background:rgba(37,211,102,0.12); color:#25D366; border:1px solid rgba(37,211,102,0.25);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+              </div>
+              <h3>WhatsApp VIP Concierge</h3>
+            </div>
+            <p>Direct chat for fast photo appraisals and instant salon reservations.</p>
+            <a href="#" class="vip-channel-link link-terracotta" onclick="event.preventDefault(); modaToast('Connecting to WhatsApp VIP Concierge...');">Chat on WhatsApp →</a>
+          </article>
+
+          <!-- Channel 2: Phone -->
+          <article class="vip-channel-card">
+            <div class="vip-channel-header">
+              <div class="benefit-icon-badge icon-sage">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <h3>Global Phone Line</h3>
+            </div>
+            <p>Available Mon–Sat 9:00 AM to 8:00 PM CET with multilingual concierge.</p>
+            <a href="tel:+18005556632" class="vip-channel-link link-sage">+1 (800) 555-MODA →</a>
+          </article>
+
+          <!-- Channel 3: Email -->
+          <article class="vip-channel-card">
+            <div class="vip-channel-header">
+              <div class="benefit-icon-badge icon-coral">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="3"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </div>
+              <h3>Encrypted Email</h3>
+            </div>
+            <p>For high-value private estate consignments and collection valuations.</p>
+            <a href="mailto:concierge@modaresale.com" class="vip-channel-link link-coral">concierge@modaresale.com →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Salon Visit FAQs -->
+    <section class="section-spacing" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="center-title">
+          <p class="kicker">SALON INFORMATION</p>
+          <h2>Visiting Our Salons</h2>
+        </div>
+
+        <div style="max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:0.85rem;" class="faq-accordion-group">
+          <details class="benefit-card faq-details" name="contact-faq" style="cursor:pointer; background:var(--bg-card); display:block;">
+            <summary style="font-weight:700; font-size:1rem; outline:none; display:flex; justify-content:space-between; align-items:center; user-select:none;">
+              <span>Do I need an appointment to drop off consignment pieces?</span>
+              <span class="faq-arrow" style="color:var(--accent-terracotta); transition:transform 0.25s ease; font-size:1.1rem;">▾</span>
+            </summary>
+            <p style="margin-top:0.75rem; font-size:0.88rem; line-height:1.6; color:var(--text-secondary);">
+              Walk-ins are welcomed during standard salon hours. For collections with 5+ pieces or rare exotics, we recommend booking a private appraisal slot in advance.
+            </p>
+          </details>
+
+          <details class="benefit-card faq-details" name="contact-faq" style="cursor:pointer; background:var(--bg-card); display:block;">
+            <summary style="font-weight:700; font-size:1rem; outline:none; display:flex; justify-content:space-between; align-items:center; user-select:none;">
+              <span>Is private valet parking available?</span>
+              <span class="faq-arrow" style="color:var(--accent-terracotta); transition:transform 0.25s ease; font-size:1.1rem;">▾</span>
+            </summary>
+            <p style="margin-top:0.75rem; font-size:0.88rem; line-height:1.6; color:var(--text-secondary);">
+              Yes, complimentary underground secure valet parking is available for clients at our Paris Place Vendome and London Mayfair salons.
+            </p>
+          </details>
+
+          <details class="benefit-card faq-details" name="contact-faq" style="cursor:pointer; background:var(--bg-card); display:block;">
+            <summary style="font-weight:700; font-size:1rem; outline:none; display:flex; justify-content:space-between; align-items:center; user-select:none;">
+              <span>How fast will I receive authentication results after drop-off?</span>
+              <span class="faq-arrow" style="color:var(--accent-terracotta); transition:transform 0.25s ease; font-size:1.1rem;">▾</span>
+            </summary>
+            <p style="margin-top:0.75rem; font-size:0.88rem; line-height:1.6; color:var(--text-secondary);">
+              Our on-site master authenticators complete preliminary physical audits on the spot, with full spectral certificates generated within 24 hours.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: VIP Valet & Hospitality Highlights (HD Photographic Visual Cards) -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="center-title" style="margin-bottom: 2rem;">
+          <p class="kicker">WHITE-GLOVE CONCIERGE</p>
+          <h2>VIP Client Amenities & Services</h2>
+          <p>Curated services tailored to our esteemed collectors and consignors.</p>
+        </div>
+
+        <div class="category-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <!-- Amenity 1: Champagne Salon -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/contact/contact-amenity-champagne.jpg" alt="Champagne Salon Hospitality & Private Viewing Lounge">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-coral" style="align-self:flex-start; margin-bottom:0.6rem;">SALON PRIVILEGE</span>
+              <h3>Champagne Salon Hospitality</h3>
+              <p>Complimentary sommelier refreshments and French delicacies in our private viewing lounges during appointments.</p>
+            </div>
+          </article>
+
+          <!-- Amenity 2: Chauffeur Service -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/contact/contact-amenity-chauffeur.jpg" alt="Private Chauffeur Service & White-Glove Doorstep Transit">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-sage" style="align-self:flex-start; margin-bottom:0.6rem;">DOORSTEP LUXURY</span>
+              <h3>Private Chauffeur Service</h3>
+              <p>Complimentary executive black-car transit and armored courier pick-up for high-value collector consignments within city limits.</p>
+            </div>
+          </article>
+
+          <!-- Amenity 3: High-Security Vaults -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/contact/contact-amenity-vault.jpg" alt="High-Security Climate-Controlled Private Vaults">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-dark" style="align-self:flex-start; margin-bottom:0.6rem;">SECURE VAULT</span>
+              <h3>High-Security Private Vaults</h3>
+              <p>Climate-controlled, biometric-secured, Lloyd's of London insurance-approved storage facilities for all archived assets.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Final Contact CTA Banner -->
+    <section class="section-spacing" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta-banner">
+          <div>
+            <span class="badge badge-dark" style="margin-bottom: 1rem;">WE LOOK FORWARD TO WELCOMING YOU</span>
+            <h2>Book Your Private Salon Experience Today</h2>
+            <p>
+              Experience quiet luxury with a bespoke viewing of our most rare archive pieces.
+            </p>
+            <div class="cta-btn-row">
+              <a href="#contactMsg" class="btn btn-dark">Reserve Private Salon Slot →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modern Reusable Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div>
+          <a href="index.html" class="brand-link" style="margin-bottom: 0.85rem;">
+            <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+            <div class="brand-title">MODA<span>RESALE</span></div>
+          </a>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; max-width: 300px;">
+            Modern curated consignment boutique for authenticated luxury fashion, fine leather goods, and vintage jewelry.
+          </p>
+          <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+            <span class="badge badge-sage">100% Authentic</span>
+            <span class="badge badge-coral">Insured Global</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Explore Boutique</div>
+          <div class="footer-links">
+            <a href="shop.html" class="footer-link">Handbags & Clutches</a>
+            <a href="shop.html" class="footer-link">Designer Ready-To-Wear</a>
+            <a href="shop.html" class="footer-link">Fine Jewelry & Watches</a>
+            <a href="shop.html" class="footer-link">New Vault Arrivals</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Client Services</div>
+          <div class="footer-links">
+            <a href="consign.html" class="footer-link">Consign With Us</a>
+            <a href="authentication.html" class="footer-link">Authentication Lab</a>
+            <a href="about.html" class="footer-link">About Our Curators</a>
+            <a href="contact.html" class="footer-link">Salon Appointments</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Get Priority Vault Drops</div>
+          <p style="font-size: 0.84rem; color: var(--text-secondary);">
+            Subscribe to receive private 24-hour early access to rare runway archive drops.
+          </p>
+          <form class="footer-subscribe-form" onsubmit="event.preventDefault(); modaToast('Thank you for subscribing to private drops!');">
+            <input type="email" class="footer-subscribe-input" placeholder="Your email address..." required aria-label="Subscribe email">
+            <button type="submit" class="footer-subscribe-btn" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container">
+        © 2026 MODA RESALE INC. ALL RIGHTS RESERVED. CONTEMPORARY LUXURY CONSIGNMENT.
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="Return to top">↑</button>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    const salonLocations = {
+      paris: {
+        title: "Paris — Place Vendome",
+        address: "📍 <strong>Current Location:</strong> 18 Place Vendome, 75001 Paris, France",
+        embedUrl: "https://maps.google.com/maps?q=18+Place+Vendome+Paris+France&t=&z=15&ie=UTF8&iwloc=&output=embed",
+        externalUrl: "https://www.google.com/maps/search/?api=1&query=18+Place+Vendome+75001+Paris+France"
+      },
+      nyc: {
+        title: "New York — SoHo",
+        address: "📍 <strong>Current Location:</strong> 142 Spring Street, New York, NY 10012",
+        embedUrl: "https://maps.google.com/maps?q=142+Spring+Street+New+York+NY+10012&t=&z=15&ie=UTF8&iwloc=&output=embed",
+        externalUrl: "https://www.google.com/maps/search/?api=1&query=142+Spring+Street+New+York+NY+10012"
+      },
+      london: {
+        title: "London — Mayfair",
+        address: "📍 <strong>Current Location:</strong> 45 Mount Street, London W1K 2RX, United Kingdom",
+        embedUrl: "https://maps.google.com/maps?q=45+Mount+Street+London+W1K+2RX+United+Kingdom&t=&z=15&ie=UTF8&iwloc=&output=embed",
+        externalUrl: "https://www.google.com/maps/search/?api=1&query=45+Mount+Street+London+W1K+2RX+United+Kingdom"
+      }
+    };
+
+    function switchSalonMap(cityKey, clickedBtn) {
+      const salon = salonLocations[cityKey];
+      if (!salon) return;
+
+      document.querySelectorAll('.salon-map-tab-btn').forEach(btn => btn.classList.remove('is-active'));
+      if (clickedBtn) clickedBtn.classList.add('is-active');
+
+      const frame = document.getElementById('salonMapFrame');
+      const addr = document.getElementById('salonMapAddress');
+      const extLink = document.getElementById('salonMapExternalLink');
+
+      if (frame) frame.src = salon.embedUrl;
+      if (addr) addr.innerHTML = salon.address;
+      if (extLink) extLink.href = salon.externalUrl;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Moda Resale — Master Forensic Authentication & Client Portal. Dual-tier verification with AI spectral analysis and NFC provenance certificates.">
+  <title>Moda Resale — Forensic Authentication & Client Portal</title>
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar-inner">
+      
+      <a href="index.html" class="brand-link" aria-label="Moda Resale Home">
+        <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+        <div class="brand-text">
+          <div class="brand-title">MODA<span>RESALE</span></div>
+          <div class="brand-sub">Curated Luxury Archive</div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <div class="nav-dropdown">
+          <a href="index.html" class="nav-link dropdown-toggle">
+            Home
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="dropdown-card-menu">
+            <a href="index.html" class="dropdown-card-item">
+              <span class="dropdown-card-title">Home 1 — Classic Boutique</span>
+              <span class="dropdown-card-desc">Curated drops & interactive valuation</span>
+            </a>
+            <a href="home-2.html" class="dropdown-card-item">
+              <span class="dropdown-card-title">Home 2 — Trending Vault</span>
+              <span class="dropdown-card-desc">Editorial split hero & consignment steps</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="consign.html" class="nav-link">Consign With Us</a>
+        <a href="authentication.html" class="nav-link active">Authentication</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button type="button" class="icon-btn" data-action="toggle-dir" aria-label="Toggle Direction" title="Switch LTR/RTL">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 8h16M16 4l4 4-4 4M20 16H4M8 12l-4 4 4 4"/>
+          </svg>
+        </button>
+
+        <button type="button" class="icon-btn" data-action="toggle-theme" aria-label="Toggle Theme" title="Switch Light/Dark Mode">
+          <span class="theme-icon-slot"></span>
+        </button>
+
+        <a href="wishlist.html" class="icon-btn" aria-label="Saved Wishlist" title="View Wishlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 0 5.5 5.5 0 0 0 0 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <b class="wishlist-count">0</b>
+        </a>
+
+        <a href="cart.html" class="icon-btn" aria-label="Shopping Bag" title="Shopping Bag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <b class="cart-count">0</b>
+        </a>
+
+        <div class="header-auth-pills">
+          <a href="login.html" class="pill-btn">Login</a>
+          <a href="register.html" class="pill-btn pill-btn-solid">Sign Up</a>
+        </div>
+
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open Navigation">☰</button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-head">
+      <a href="index.html" class="brand-link">
+        <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+        <div class="brand-title">MODA<span>RESALE</span></div>
+      </a>
+      <button type="button" class="icon-btn" id="mobileDrawerClose" aria-label="Close Navigation">✕</button>
+    </div>
+
+    <!-- Mobile Quick Commerce Bar (Wishlist & Cart Bag) -->
+    <div class="mobile-quick-actions">
+      <a href="wishlist.html" class="mobile-quick-item" title="View Wishlist">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 0 5.5 5.5 0 0 0 0 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <span>Wishlist (<b class="wishlist-count">0</b>)</span>
+      </a>
+      <a href="cart.html" class="mobile-quick-item" title="View Shopping Bag">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span>Bag (<b class="cart-count">0</b>)</span>
+      </a>
+    </div>
+
+    <nav class="mobile-drawer-links">
+      <div class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link mobile-dropdown-toggle">
+          <span>Home Pages</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="mobile-sub-menu">
+          <a href="index.html" class="mobile-sub-link">Home 1 — Classic Boutique</a>
+          <a href="home-2.html" class="mobile-sub-link">Home 2 — Trending Vault</a>
+        </div>
+      </div>
+      <a href="shop.html" class="mobile-nav-link">Shop Collection</a>
+      <a href="consign.html" class="mobile-nav-link">Consign With Us</a>
+      <a href="authentication.html" class="mobile-nav-link active">Authentication</a>
+      <a href="about.html" class="mobile-nav-link">About Maison</a>
+      <a href="contact.html" class="mobile-nav-link">Contact & Salons</a>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <div class="mobile-toggles-grid">
+        <button type="button" class="btn btn-light btn-sm" data-action="toggle-theme" aria-label="Toggle Theme">
+          <span class="theme-icon-slot">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </span>
+          <span>Theme</span>
+        </button>
+        <button type="button" class="btn btn-light btn-sm" data-action="toggle-dir" aria-label="Toggle Direction">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 8h16M16 4l4 4-4 4M20 16H4M8 12l-4 4 4 4"/>
+          </svg>
+          <span>Direction</span>
+        </button>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; width:100%;">
+        <a href="login.html" class="btn btn-light btn-sm" style="text-align:center;">Login</a>
+        <a href="register.html" class="btn btn-gradient btn-sm" style="text-align:center;">Sign Up</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content: Authentication & Client Portal (7 Sections) -->
+  <main id="mainContent">
+
+    <!-- SECTION 1: Standardized Inner Hero -->
+    <section class="inner-page-hero">
+      <div class="container">
+        <div class="inner-hero-content">
+          <nav class="inner-hero-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="crumb-sep">/</span>
+            <span class="crumb-active">Authentication Lab</span>
+          </nav>
+          <p class="kicker kicker-sage">✦ &nbsp; FORENSIC AUTHENTICITY LAB</p>
+          <h1 class="inner-hero-title">Uncompromising Precision. <span style="color:var(--accent-coral);">100% Guaranteed.</span></h1>
+          <p class="inner-hero-subtitle">Dual-tier forensic laboratory mapping and AI textural verification backed by a 100% lifetime financial guarantee and tamper-proof NFC digital card.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: What We Check (4 Multi-Point Cards with HD Inspection Photos) -->
+    <section class="section-spacing" id="checks" style="background-color: var(--bg-surface);">
+      <div class="container">
+        
+        <!-- Lab Overview Showcase Banner -->
+        <div class="curate-lab-shell" style="background:var(--bg-card); padding: clamp(1.5rem, 3vw, 2.5rem); margin-bottom: 2.5rem;">
+          <div class="lab-grid" style="align-items:center;">
+            <div>
+              <p class="kicker kicker-sage">✦ &nbsp; LAB PROTOCOL</p>
+              <h3>Multi-Spectral Forensic Verification</h3>
+              <p>
+                Every piece entering our vault undergoes rigorous spectral analysis, macroscopic leather grain verification, and metallurgical testing against our master luxury archive.
+              </p>
+              <div class="stats-grid-3">
+                <div class="benefit-card" style="flex-direction:column; background:var(--bg-surface); padding:0.85rem; text-align:center;">
+                  <b style="font-size:1.4rem; font-family:var(--font-display); color:var(--accent-coral);">100%</b>
+                  <span style="font-size:0.68rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Lifetime Warranty</span>
+                </div>
+                <div class="benefit-card" style="flex-direction:column; background:var(--bg-surface); padding:0.85rem; text-align:center;">
+                  <b style="font-size:1.4rem; font-family:var(--font-display); color:var(--accent-terracotta);">40+</b>
+                  <span style="font-size:0.68rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Checkpoints</span>
+                </div>
+                <div class="benefit-card" style="flex-direction:column; background:var(--bg-surface); padding:0.85rem; text-align:center;">
+                  <b style="font-size:1.4rem; font-family:var(--font-display); color:var(--accent-sage);">Dual</b>
+                  <span style="font-size:0.68rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">AI + Human</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-media-card" style="aspect-ratio: 4 / 3.2; max-width: 100%;">
+              <img src="assets/images/authentication/authentication-lab-hero.jpg" alt="Forensic microscope inspection on luxury leather stitching">
+              <div class="hero-trending-badge">
+                <span class="trending-icon">🔬</span>
+                <div class="trending-text">
+                  <small>SPECTRAL LAB ANALYSIS</small>
+                  <b>Macro Stitch & Metallurgy Assay</b>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="center-title" style="margin-bottom: 2.25rem;">
+          <p class="kicker">40-POINT FORENSIC AUDIT</p>
+          <h2>What Our Specialists Inspect</h2>
+          <p>Zero compromises. Every structural detail is compared against master archival references.</p>
+        </div>
+
+        <div class="category-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+          <!-- Card 1: Microscopic Stitching -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/authentication/authentication-inspect-stitching.jpg" alt="Precision Microscopic Stitching and Thread Inspection">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-coral" style="align-self:flex-start; margin-bottom:0.6rem;">CHECKPOINT 01</span>
+              <h3>1. Microscopic Stitching</h3>
+              <p>Stitch slant angle, thread tension, stitch density per inch, and exact wax-coated thread composition.</p>
+            </div>
+          </article>
+
+          <!-- Card 2: Metallurgy & Plating -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/authentication/authentication-inspect-metallurgy.jpg" alt="Metallurgy and Hardware Plating Inspection">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-sage" style="align-self:flex-start; margin-bottom:0.6rem;">CHECKPOINT 02</span>
+              <h3>2. Metallurgy &amp; Plating</h3>
+              <p>Laser engraving depth, font typography, palladium/gold micron plating thickness, and screw head geometry.</p>
+            </div>
+          </article>
+
+          <!-- Card 3: Serial Stamps & Foils -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/authentication/authentication-inspect-stamps.jpg" alt="Precision Heat-Stamp and Serial Foil Inspection">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-gold" style="align-self:flex-start; margin-bottom:0.6rem;">CHECKPOINT 03</span>
+              <h3>3. Serial Stamps &amp; Foils</h3>
+              <p>Heat-stamp clarity, blind stamp font matrix, foil pigmentation, and brand logo placement accuracy.</p>
+            </div>
+          </article>
+
+          <!-- Card 4: Material & Leather Grain -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/authentication/authentication-inspect-leather.jpg" alt="Luxury Leather Hide Grain and Texture Analysis">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-dark" style="align-self:flex-start; margin-bottom:0.6rem;">CHECKPOINT 04</span>
+              <h3>4. Material &amp; Leather Grain</h3>
+              <p>Authentic leather aroma, grain follicle density, edge-paint flexibility, and structural leather temper.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: The Dual-Tier Verification Process -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="curate-lab-shell" style="background:var(--bg-surface); padding:3rem;">
+          <div class="lab-grid">
+            <div>
+              <p class="kicker">DUAL-TIER ENGINE</p>
+              <h2>The Synergy of AI & Artisanal Heritage</h2>
+              <p>
+                Our proprietary authentication system uses spectral database comparisons from over 500,000 reference archive scans, validated independently by two senior luxury appraisers.
+              </p>
+              <div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
+                <div class="step-list-item">
+                  <span class="badge badge-coral step-badge">STEP 01</span>
+                  <span class="step-text">AI Spectral Surface &amp; Grain Scan</span>
+                </div>
+                <div class="step-list-item">
+                  <span class="badge badge-sage step-badge">STEP 02</span>
+                  <span class="step-text">Independent Master Authenticator Physical Audit</span>
+                </div>
+                <div class="step-list-item">
+                  <span class="badge badge-dark step-badge">STEP 03</span>
+                  <span class="step-text">Cryptographic NFC Provenance Certificate Issuance</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lab-builder-card" style="background:var(--bg-card); text-align:center;">
+              <span class="badge badge-sage" style="margin-bottom:1rem;">NFC DIGITAL ARCHIVE PASSPORT</span>
+              <h3>Tap-To-Verify Physical Chip</h3>
+              <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:1.5rem;">
+                Tap your smartphone to your Moda Resale card to instantly view full forensic inspection photos, grading sheet, and verified chain of custody.
+              </p>
+              <button type="button" class="btn btn-gradient btn-sm" onclick="modaToast('NFC Digital Passport Demo Verified!')">Test NFC Verification Demo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Lifetime Authenticity Guarantee -->
+    <section class="section-spacing" style="background-color: var(--bg-surface); padding-top:2.5rem; padding-bottom:2.5rem;">
+      <div class="container">
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.5rem; padding:2rem; background:var(--bg-card); border-radius:var(--radius-lg); border:1.5px solid var(--border-color);">
+          <div style="max-width:600px;">
+            <span class="badge badge-coral" style="margin-bottom:0.5rem;">PEACE OF MIND PROMISE</span>
+            <h3>100% Lifetime Money-Back Guarantee</h3>
+            <p style="font-size:0.9rem; margin-bottom:0;">
+              If any piece authenticated by Moda Resale is ever proven counterfeit by an authorized brand maison, you receive an immediate 100% full refund including all transit fees.
+            </p>
+          </div>
+          <a href="contact.html" class="btn btn-outline">Read Full Legal Guarantee →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Client Portal (Interactive Sign In & Registration Tabs) -->
+    <section class="section-spacing" id="portalSection">
+      <div class="container">
+        <div class="curate-lab-shell" style="max-width:680px; margin:0 auto; background:var(--bg-card);">
+          <div class="center-title" style="margin-bottom:1.75rem;">
+            <p class="kicker">CLIENT CONCIERGE ACCESS</p>
+            <h2>Moda Resale Client Portal</h2>
+            <p>Manage your consigned items, active bids, and authenticated certificate archive.</p>
+          </div>
+
+          <!-- Tab Selector -->
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; background:var(--bg-surface); padding:0.35rem; border-radius:var(--radius-pill); margin-bottom:1.75rem;">
+            <button type="button" id="tabLoginBtn" class="pill-btn pill-btn-solid" style="border:none;" onclick="switchAuthTab('login')">Sign In</button>
+            <button type="button" id="tabRegisterBtn" class="pill-btn" style="border:none;" onclick="switchAuthTab('register')">Create Account</button>
+          </div>
+
+          <!-- Login Form -->
+          <form id="loginForm" onsubmit="event.preventDefault(); modaToast('Signed in successfully as Client!'); this.reset();">
+            <div class="form-group">
+              <label class="form-label" for="loginEmail">Email Address</label>
+              <input type="email" id="loginEmail" class="form-control" placeholder="client@example.com" required>
+            </div>
+            <div class="form-group">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <label class="form-label" for="loginPassword">Password</label>
+                <a href="#" style="font-size:0.75rem; font-weight:700; color:var(--accent-terracotta);" onclick="event.preventDefault(); modaToast('Password reset link sent to your email.');">Forgot Password?</a>
+              </div>
+              <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1.25rem;">
+              <input type="checkbox" id="rememberMe" style="accent-color:var(--accent-terracotta); width:16px; height:16px;">
+              <label for="rememberMe" style="font-size:0.82rem; color:var(--text-secondary);">Remember this device</label>
+            </div>
+            <button type="submit" class="btn btn-gradient" style="width:100%; padding:0.85rem;">Sign In to Client Vault →</button>
+          </form>
+
+          <!-- Register Form (Hidden by default) -->
+          <form id="registerForm" style="display:none;" onsubmit="event.preventDefault(); modaToast('Account created! Welcome to Moda Resale.'); switchAuthTab('login'); this.reset();">
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="regFirstName">First Name</label>
+                <input type="text" id="regFirstName" class="form-control" placeholder="Elena" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="regLastName">Last Name</label>
+                <input type="text" id="regLastName" class="form-control" placeholder="Vance" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regEmail">Email Address</label>
+              <input type="email" id="regEmail" class="form-control" placeholder="elena@example.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regPassword">Create Password</label>
+              <input type="password" id="regPassword" class="form-control" placeholder="Minimum 8 characters" required>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1.25rem;">
+              <input type="checkbox" id="acceptTerms" required style="accent-color:var(--accent-terracotta); width:16px; height:16px;">
+              <label for="acceptTerms" style="font-size:0.82rem; color:var(--text-secondary);">I accept the terms of consignment & luxury privacy policy</label>
+            </div>
+            <button type="submit" class="btn btn-gradient" style="width:100%; padding:0.85rem;">Create Free VIP Account →</button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Sample Certificate Lookup Simulator -->
+    <section class="section-spacing" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="center-title">
+          <p class="kicker">DIGITAL PASSPORT LOOKUP</p>
+          <h2>Verify An NFC Certificate Serial</h2>
+          <p>Enter any 8-character certificate code to verify authentic provenance.</p>
+        </div>
+
+        <div class="lookup-input-group">
+          <input type="text" class="form-control" placeholder="e.g. MODA-8492" value="MODA-8492" style="text-transform:uppercase; font-weight:700; text-align:center;">
+          <button type="button" class="btn btn-dark btn-sm" onclick="modaToast('Certificate #MODA-8492 Verified: Birkin 25 Togo · Grade 1 Pristine')">Verify Code</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Final CTA Banner -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="cta-banner">
+          <div>
+            <span class="badge badge-dark" style="margin-bottom: 1rem;">COLLECTOR REASSURANCE</span>
+            <h2>Have an Item You Want Us to Authenticate?</h2>
+            <p>
+              We provide standalone physical authentication certificates for privately acquired luxury items.
+            </p>
+            <div class="cta-btn-row">
+              <a href="contact.html" class="btn btn-dark">Request Authentication Appointment →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modern Reusable Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div>
+          <a href="index.html" class="brand-link" style="margin-bottom: 0.85rem;">
+            <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+            <div class="brand-title">MODA<span>RESALE</span></div>
+          </a>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; max-width: 300px;">
+            Modern curated consignment boutique for authenticated luxury fashion, fine leather goods, and vintage jewelry.
+          </p>
+          <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+            <span class="badge badge-sage">100% Authentic</span>
+            <span class="badge badge-coral">Insured Global</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Explore Boutique</div>
+          <div class="footer-links">
+            <a href="shop.html" class="footer-link">Handbags & Clutches</a>
+            <a href="shop.html" class="footer-link">Designer Ready-To-Wear</a>
+            <a href="shop.html" class="footer-link">Fine Jewelry & Watches</a>
+            <a href="shop.html" class="footer-link">New Vault Arrivals</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Client Services</div>
+          <div class="footer-links">
+            <a href="consign.html" class="footer-link">Consign With Us</a>
+            <a href="authentication.html" class="footer-link">Authentication Lab</a>
+            <a href="about.html" class="footer-link">About Our Curators</a>
+            <a href="contact.html" class="footer-link">Salon Appointments</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Get Priority Vault Drops</div>
+          <p style="font-size: 0.84rem; color: var(--text-secondary);">
+            Subscribe to receive private 24-hour early access to rare runway archive drops.
+          </p>
+          <form class="footer-subscribe-form" onsubmit="event.preventDefault(); modaToast('Thank you for subscribing to private drops!');">
+            <input type="email" class="footer-subscribe-input" placeholder="Your email address..." required aria-label="Subscribe email">
+            <button type="submit" class="footer-subscribe-btn" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container">
+        © 2026 MODA RESALE INC. ALL RIGHTS RESERVED. CONTEMPORARY LUXURY CONSIGNMENT.
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="Return to top">↑</button>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    function switchAuthTab(tab) {
+      const loginForm = document.getElementById('loginForm');
+      const regForm = document.getElementById('registerForm');
+      const loginBtn = document.getElementById('tabLoginBtn');
+      const regBtn = document.getElementById('tabRegisterBtn');
+
+      if (tab === 'login') {
+        loginForm.style.display = 'block';
+        regForm.style.display = 'none';
+        loginBtn.classList.add('pill-btn-solid');
+        regBtn.classList.remove('pill-btn-solid');
+      } else {
+        loginForm.style.display = 'none';
+        regForm.style.display = 'block';
+        regBtn.classList.add('pill-btn-solid');
+        loginBtn.classList.remove('pill-btn-solid');
+      }
+    }
+  </script>
+</body>
+</html>

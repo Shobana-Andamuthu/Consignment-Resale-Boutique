@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consign your luxury designer wardrobe with Moda Resale. Earn up to 88% payout with white-glove courier pickup and instant valuation.">
+  <title>Moda Resale — Consign With Us | White-Glove Luxury Resale</title>
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar-inner">
+      
+      <a href="index.html" class="brand-link" aria-label="Moda Resale Home">
+        <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+        <div class="brand-text">
+          <div class="brand-title">MODA<span>RESALE</span></div>
+          <div class="brand-sub">Curated Luxury Archive</div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <div class="nav-dropdown">
+          <a href="index.html" class="nav-link dropdown-toggle">
+            Home
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="dropdown-card-menu">
+            <a href="index.html" class="dropdown-card-item">
+              <span class="dropdown-card-title">Home 1 — Classic Boutique</span>
+              <span class="dropdown-card-desc">Curated drops & interactive valuation</span>
+            </a>
+            <a href="home-2.html" class="dropdown-card-item">
+              <span class="dropdown-card-title">Home 2 — Trending Vault</span>
+              <span class="dropdown-card-desc">Editorial split hero & consignment steps</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="consign.html" class="nav-link active">Consign With Us</a>
+        <a href="authentication.html" class="nav-link">Authentication</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button type="button" class="icon-btn" data-action="toggle-dir" aria-label="Toggle Direction" title="Switch LTR/RTL">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 8h16M16 4l4 4-4 4M20 16H4M8 12l-4 4 4 4"/>
+          </svg>
+        </button>
+
+        <button type="button" class="icon-btn" data-action="toggle-theme" aria-label="Toggle Theme" title="Switch Light/Dark Mode">
+          <span class="theme-icon-slot"></span>
+        </button>
+
+        <a href="wishlist.html" class="icon-btn" aria-label="Saved Wishlist" title="View Wishlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 0 5.5 5.5 0 0 0 0 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <b class="wishlist-count">0</b>
+        </a>
+
+        <a href="cart.html" class="icon-btn" aria-label="Shopping Bag" title="Shopping Bag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <b class="cart-count">0</b>
+        </a>
+
+        <div class="header-auth-pills">
+          <a href="login.html" class="pill-btn">Login</a>
+          <a href="register.html" class="pill-btn pill-btn-solid">Sign Up</a>
+        </div>
+
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open Navigation">☰</button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-head">
+      <a href="index.html" class="brand-link">
+        <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+        <div class="brand-title">MODA<span>RESALE</span></div>
+      </a>
+      <button type="button" class="icon-btn" id="mobileDrawerClose" aria-label="Close Navigation">✕</button>
+    </div>
+
+    <!-- Mobile Quick Commerce Bar (Wishlist & Cart Bag) -->
+    <div class="mobile-quick-actions">
+      <a href="wishlist.html" class="mobile-quick-item" title="View Wishlist">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 0 5.5 5.5 0 0 0 0 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <span>Wishlist (<b class="wishlist-count">0</b>)</span>
+      </a>
+      <a href="cart.html" class="mobile-quick-item" title="View Shopping Bag">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span>Bag (<b class="cart-count">0</b>)</span>
+      </a>
+    </div>
+
+    <nav class="mobile-drawer-links">
+      <div class="mobile-nav-item">
+        <a href="#" class="mobile-nav-link mobile-dropdown-toggle">
+          <span>Home Pages</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="mobile-sub-menu">
+          <a href="index.html" class="mobile-sub-link">Home 1 — Classic Boutique</a>
+          <a href="home-2.html" class="mobile-sub-link">Home 2 — Trending Vault</a>
+        </div>
+      </div>
+      <a href="shop.html" class="mobile-nav-link">Shop Collection</a>
+      <a href="consign.html" class="mobile-nav-link active">Consign With Us</a>
+      <a href="authentication.html" class="mobile-nav-link">Authentication</a>
+      <a href="about.html" class="mobile-nav-link">About Maison</a>
+      <a href="contact.html" class="mobile-nav-link">Contact & Salons</a>
+    </nav>
+
+    <div class="mobile-drawer-actions">
+      <div class="mobile-toggles-grid">
+        <button type="button" class="btn btn-light btn-sm" data-action="toggle-theme" aria-label="Toggle Theme">
+          <span class="theme-icon-slot">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </span>
+          <span>Theme</span>
+        </button>
+        <button type="button" class="btn btn-light btn-sm" data-action="toggle-dir" aria-label="Toggle Direction">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 8h16M16 4l4 4-4 4M20 16H4M8 12l-4 4 4 4"/>
+          </svg>
+          <span>Direction</span>
+        </button>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; width:100%;">
+        <a href="login.html" class="btn btn-light btn-sm" style="text-align:center;">Login</a>
+        <a href="register.html" class="btn btn-gradient btn-sm" style="text-align:center;">Sign Up</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content: Consign With Us (7 Sections) -->
+  <main id="mainContent">
+
+    <!-- SECTION 1: Standardized Inner Hero -->
+    <section class="inner-page-hero">
+      <div class="container">
+        <div class="inner-hero-content">
+          <nav class="inner-hero-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="crumb-sep">/</span>
+            <span class="crumb-active">Consign With Us</span>
+          </nav>
+          <p class="kicker">✧ &nbsp; WHITE-GLOVE CONSIGNMENT</p>
+          <h1 class="inner-hero-title">Sell Your Luxury Assets With <span style="color:var(--accent-terracotta);">Highest Market Payouts</span></h1>
+          <p class="inner-hero-subtitle">Consign your Hermes, Chanel, Cartier, and luxury timepieces with insured doorstep collection, master authentication, and up to 88% direct earnings.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: How It Works (4 Visual Process Steps) -->
+    <section class="section-spacing" style="background-color: var(--bg-surface);">
+      <div class="container">
+        
+        <!-- White Glove Consignment Spotlight Banner -->
+        <div class="curate-lab-shell" style="background:var(--bg-card); padding: clamp(1.5rem, 3vw, 2.5rem); margin-bottom: 2.5rem;">
+          <div class="lab-grid" style="align-items:center;">
+            <div>
+              <p class="kicker">VALUATION & CONSIGNMENT</p>
+              <h3>Complimentary White-Glove Appraisal</h3>
+              <p>
+                From insured transit kits to private in-salon private valuations, our specialists ensure your high-value designer heirlooms achieve peak international market value.
+              </p>
+              <div class="stats-grid-3">
+                <div class="benefit-card" style="flex-direction:column; background:var(--bg-surface); padding:0.85rem; text-align:center;">
+                  <b style="font-size:1.4rem; font-family:var(--font-display); color:var(--accent-terracotta);">88%</b>
+                  <span style="font-size:0.68rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Top Payout</span>
+                </div>
+                <div class="benefit-card" style="flex-direction:column; background:var(--bg-surface); padding:0.85rem; text-align:center;">
+                  <b style="font-size:1.4rem; font-family:var(--font-display); color:var(--accent-sage);">14 Days</b>
+                  <span style="font-size:0.68rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Avg Sale</span>
+                </div>
+                <div class="benefit-card" style="flex-direction:column; background:var(--bg-surface); padding:0.85rem; text-align:center;">
+                  <b style="font-size:1.4rem; font-family:var(--font-display); color:var(--accent-coral);">$0</b>
+                  <span style="font-size:0.68rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Listing Fees</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-media-card" style="aspect-ratio: 4 / 3.2; max-width: 100%;">
+              <img src="assets/images/consign/consign-inspection-hero.jpg" alt="White-glove luxury consignment appraisal specialist">
+              <div class="hero-trending-badge">
+                <span class="trending-icon">✨</span>
+                <div class="trending-text">
+                  <small>COMPLIMENTARY VALUATION</small>
+                  <b>Expert In-Salon & Digital Audit</b>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="center-title">
+          <p class="kicker">SIMPLE & DISCREET</p>
+          <h2>How Selling With Us Works</h2>
+          <p>Four effortless steps from valuation to instant bank transfer.</p>
+        </div>
+
+        <div class="benefits-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column;">
+            <span class="badge badge-coral" style="margin-bottom:0.75rem;">STEP 1</span>
+            <h3>Upload Details</h3>
+            <p>Fill out our simple form with photos and designer brand information.</p>
+          </article>
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column;">
+            <span class="badge badge-sage" style="margin-bottom:0.75rem;">STEP 2</span>
+            <h3>Receive Offer</h3>
+            <p>Our curators review your piece and provide upfront market price estimates within 24 hours.</p>
+          </article>
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column;">
+            <span class="badge badge-dark" style="margin-bottom:0.75rem;">STEP 3</span>
+            <h3>Free Courier Pickup</h3>
+            <p>We send prepaid insured transit kits or pick up directly from your doorstep.</p>
+          </article>
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column;">
+            <span class="badge badge-coral" style="margin-bottom:0.75rem;">STEP 4</span>
+            <h3>Instant Payout</h3>
+            <p>Get paid via wire transfer immediately upon authentication or item sale.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: What We Accept (Categories & Brands) -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="center-title">
+          <p class="kicker">ACCEPTED DESIGNERS</p>
+          <h2>Categories We Currently Consign</h2>
+          <p>We accept premier luxury brands with high global resale demand.</p>
+        </div>
+
+        <div class="category-grid">
+          <div class="category-card">
+            <img src="assets/images/consign/consign-handbags-accepted.jpg" alt="Handbags Consignment">
+            <div class="category-card-content">
+              <h3>Handbags & Leather</h3>
+              <span>Hermes · Chanel · Goyard · Bottega</span>
+            </div>
+          </div>
+          <div class="category-card">
+            <img src="assets/images/consign/consign-apparel-accepted.jpg" alt="Apparel Consignment">
+            <div class="category-card-content">
+              <h3>Designer Ready-To-Wear</h3>
+              <span>Trench Coats · Blazers · Silk Gowns</span>
+            </div>
+          </div>
+          <div class="category-card">
+            <img src="assets/images/consign/consign-jewelry-accepted.jpg" alt="Jewelry Consignment">
+            <div class="category-card-content">
+              <h3>Fine Jewelry & Watches</h3>
+              <span>Rolex · Cartier · Van Cleef · Patek</span>
+            </div>
+          </div>
+          <div class="category-card">
+            <img src="assets/images/consign/consign-accessories-accepted.jpg" alt="Accessories Consignment">
+            <div class="category-card-content">
+              <h3>Luxury Accessories</h3>
+              <span>Silk Twill Scarves · Belts · Eyewear</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Transparent Payout Tiers -->
+    <section class="section-spacing" id="rates" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="center-title">
+          <p class="kicker">CLEAR & COMPETITIVE</p>
+          <h2>Transparent Consignment Commission Tiers</h2>
+          <p>The more valuable your item, the more you keep in your pocket.</p>
+        </div>
+
+        <div class="benefits-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column; text-align:center; align-items:center;">
+            <span class="badge badge-coral" style="margin-bottom:0.75rem;">TIER 1 · ULTRA LUXURY</span>
+            <b style="font-size:2.4rem; font-family:var(--font-display); color:var(--text-primary); line-height:1; margin-bottom:0.25rem;">88%</b>
+            <span style="font-size:0.8rem; font-weight:700; color:var(--accent-terracotta); text-transform:uppercase; margin-bottom:1rem;">Items Above $10,000</span>
+            <p style="font-size:0.85rem;">Includes Birkin, Kelly, rare Cartier Haute Joaillerie, and luxury watches.</p>
+          </article>
+
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column; text-align:center; align-items:center;">
+            <span class="badge badge-sage" style="margin-bottom:0.75rem;">TIER 2 · PREMIER ICONS</span>
+            <b style="font-size:2.4rem; font-family:var(--font-display); color:var(--text-primary); line-height:1; margin-bottom:0.25rem;">82%</b>
+            <span style="font-size:0.8rem; font-weight:700; color:var(--accent-sage); text-transform:uppercase; margin-bottom:1rem;">Items $3,000 – $9,999</span>
+            <p style="font-size:0.85rem;">Includes Chanel Classic Flap, Bottega Cassette, and Love bangles.</p>
+          </article>
+
+          <article class="benefit-card" style="background:var(--bg-card); flex-direction:column; text-align:center; align-items:center;">
+            <span class="badge badge-dark" style="margin-bottom:0.75rem;">TIER 3 · CONTEMPORARY</span>
+            <b style="font-size:2.4rem; font-family:var(--font-display); color:var(--text-primary); line-height:1; margin-bottom:0.25rem;">75%</b>
+            <span style="font-size:0.8rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-bottom:1rem;">Items $1,000 – $2,999</span>
+            <p style="font-size:0.85rem;">Includes designer coats, boots, belts, and ready-to-wear pieces.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Why Consign With Moda Resale (with HD Benefit Photos) -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="center-title" style="margin-bottom: 2.25rem;">
+          <p class="kicker">THE MODA ADVANTAGE</p>
+          <h2>Why Top Consignors Choose Us</h2>
+          <p>We combine digital global reach with high-touch private salon service.</p>
+        </div>
+
+        <div class="category-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+          <!-- Benefit 1: Global Collector Base -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/consign/consign-benefit-global.jpg" alt="Luxury pink boutique showroom and global collector client base">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-coral" style="align-self:flex-start; margin-bottom:0.6rem;">GLOBAL REACH</span>
+              <h3>Global Collector Base</h3>
+              <p>Direct exposure to over 40,000 verified luxury buyers across Europe, US, and Asia.</p>
+            </div>
+          </article>
+
+          <!-- Benefit 2: Direct Buyout Option -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/consign/consign-benefit-buyout.jpg" alt="Consignment specialist evaluating direct buyout luxury inventory">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-sage" style="align-self:flex-start; margin-bottom:0.6rem;">INSTANT LIQUIDITY</span>
+              <h3>Direct Buyout Option</h3>
+              <p>Prefer cash right away? Get an immediate direct purchase quote without waiting for consignment.</p>
+            </div>
+          </article>
+
+          <!-- Benefit 3: 100% Insured Protection -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/consign/consign-benefit-insurance.jpg" alt="Luxury concierge advisor providing fully insured coverage">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-gold" style="align-self:flex-start; margin-bottom:0.6rem;">COMPREHENSIVE COVERAGE</span>
+              <h3>100% Insured Protection</h3>
+              <p>Full commercial insurance coverage from the second your piece leaves your hands.</p>
+            </div>
+          </article>
+
+          <!-- Benefit 4: Pro Studio Photography -->
+          <article class="amenity-card">
+            <div class="amenity-card-media">
+              <img src="assets/images/consign/consign-benefit-photography.jpg" alt="High-resolution professional fashion studio lighting photoshoot">
+            </div>
+            <div class="amenity-card-body">
+              <span class="badge badge-dark" style="align-self:flex-start; margin-bottom:0.6rem;">EDITORIAL EXCELLENCE</span>
+              <h3>Pro Studio Photography</h3>
+              <p>High-resolution multi-angle macro studio shots that showcase your piece in its best light.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Quick Consignment Submission Form -->
+    <section class="section-spacing" id="consignForm" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="curate-lab-shell" style="background:var(--bg-card); max-width:840px; margin:0 auto;">
+          <div class="center-title" style="margin-bottom:1.75rem;">
+            <span class="badge badge-coral" style="margin-bottom:0.75rem;">START YOUR CONSIGNMENT</span>
+            <h2>Request Your Complimentary Valuation</h2>
+            <p>Fill out the details below and our appraisal team will respond within 24 hours.</p>
+          </div>
+
+          <form onsubmit="event.preventDefault(); modaToast('Consignment request received! Our curator will email you shortly.'); this.reset();">
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="clientName">Full Name</label>
+                <input type="text" id="clientName" class="form-control" placeholder="e.g. Eleanor Vance" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="clientEmail">Email Address</label>
+                <input type="email" id="clientEmail" class="form-control" placeholder="e.g. eleanor@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="itemBrand">Designer Brand</label>
+                <select id="itemBrand" class="form-control" required>
+                  <option value="">Select Designer...</option>
+                  <option>Hermes</option>
+                  <option>Chanel</option>
+                  <option>Cartier</option>
+                  <option>Rolex</option>
+                  <option>Bottega Veneta</option>
+                  <option>Louis Vuitton</option>
+                  <option>Celine</option>
+                  <option>Other Luxury House</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="itemCategory">Item Category</label>
+                <select id="itemCategory" class="form-control" required>
+                  <option value="">Select Category...</option>
+                  <option>Handbag / Leather Goods</option>
+                  <option>Fine Jewelry</option>
+                  <option>Luxury Timepiece</option>
+                  <option>Ready-To-Wear Apparel</option>
+                  <option>Shoes & Accessories</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="itemDesc">Item Name, Color & Included Accessories</label>
+              <textarea id="itemDesc" class="form-control" placeholder="e.g. Birkin 25 Gold Togo, includes original box, receipt, dustbag, and rain cover." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gradient" style="width:100%; padding:0.85rem;">Submit Item For Free Valuation →</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Final CTA Banner -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="cta-banner">
+          <div>
+            <span class="badge badge-dark" style="margin-bottom: 1rem;">PRIVATE VALUATION DAYS</span>
+            <h2>Prefer An In-Person Drop-Off?</h2>
+            <p>
+              Schedule a one-on-one appraisal with our head authenticators at our private salons in Paris, New York, or London.
+            </p>
+            <div class="cta-btn-row">
+              <a href="contact.html" class="btn btn-dark">Book In-Salon Appointment →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modern Reusable Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div>
+          <a href="index.html" class="brand-link" style="margin-bottom: 0.85rem;">
+            <span class="brand-mark"><img src="assets/images/logo.svg" alt="Moda Resale" width="36" height="36"></span>
+            <div class="brand-title">MODA<span>RESALE</span></div>
+          </a>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; max-width: 300px;">
+            Modern curated consignment boutique for authenticated luxury fashion, fine leather goods, and vintage jewelry.
+          </p>
+          <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+            <span class="badge badge-sage">100% Authentic</span>
+            <span class="badge badge-coral">Insured Global</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Explore Boutique</div>
+          <div class="footer-links">
+            <a href="shop.html" class="footer-link">Handbags & Clutches</a>
+            <a href="shop.html" class="footer-link">Designer Ready-To-Wear</a>
+            <a href="shop.html" class="footer-link">Fine Jewelry & Watches</a>
+            <a href="shop.html" class="footer-link">New Vault Arrivals</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Client Services</div>
+          <div class="footer-links">
+            <a href="consign.html" class="footer-link">Consign With Us</a>
+            <a href="authentication.html" class="footer-link">Authentication Lab</a>
+            <a href="about.html" class="footer-link">About Our Curators</a>
+            <a href="contact.html" class="footer-link">Salon Appointments</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Get Priority Vault Drops</div>
+          <p style="font-size: 0.84rem; color: var(--text-secondary);">
+            Subscribe to receive private 24-hour early access to rare runway archive drops.
+          </p>
+          <form class="footer-subscribe-form" onsubmit="event.preventDefault(); modaToast('Thank you for subscribing to private drops!');">
+            <input type="email" class="footer-subscribe-input" placeholder="Your email address..." required aria-label="Subscribe email">
+            <button type="submit" class="footer-subscribe-btn" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container">
+        © 2026 MODA RESALE INC. ALL RIGHTS RESERVED. CONTEMPORARY LUXURY CONSIGNMENT.
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="Return to top">↑</button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
