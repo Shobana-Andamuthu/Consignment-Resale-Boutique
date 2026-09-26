@@ -710,4 +710,129 @@
   }
 }
 
+/* ==========================================================================
+   FLUID TOAST NOTIFICATIONS RESPONSIVE SYSTEM
+   ========================================================================== */
+@media (max-width: 768px) {
+  .toast-container {
+    bottom: 20px;
+    width: calc(100% - 32px);
+    max-width: calc(100vw - 32px);
+    padding: 0;
+  }
+
+  .toast {
+    padding: 0.75rem 1rem;
+    font-size: 0.82rem;
+    border-radius: 12px;
+    gap: 0.65rem;
+  }
+
+  .toast-icon-wrap {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toast-container {
+    bottom: 16px;
+    width: calc(100% - 24px);
+    max-width: calc(100vw - 24px);
+  }
+
+  .toast {
+    padding: 0.7rem 0.85rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    border-radius: 10px;
+    gap: 0.55rem;
+  }
+
+  .toast-icon-wrap {
+    width: 24px;
+    height: 24px;
+  }
+
+  .toast-icon-wrap svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* ==========================================================================
+   PRELOADER RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 576px) {
+  .loader-inner {
+    padding: 1.5rem 1rem;
+  }
+
+  .loader-emblem-wrap {
+    width: 76px;
+    height: 76px;
+    margin-bottom: 1.15rem;
+  }
+
+  .loader-emblem {
+    width: 42px;
+    height: 42px;
+  }
+
+  .loader-emblem img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .loader-brand {
+    font-size: 1.15rem;
+    letter-spacing: 0.15em;
+  }
+
+  .loader-tagline {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 1.25rem;
+  }
+
+  .loader-progress-track {
+    width: 150px;
+    max-width: 65vw;
+    height: 3px;
+    margin-bottom: 0.65rem;
+  }
+
+  .loader-status-row {
+    width: 150px;
+    max-width: 65vw;
+    font-size: 0.62rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .loader-emblem-wrap {
+    width: 68px;
+    height: 68px;
+  }
+
+  .loader-emblem {
+    width: 36px;
+    height: 36px;
+  }
+
+  .loader-emblem img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .loader-brand {
+    font-size: 1rem;
+  }
+
+  .loader-progress-track,
+  .loader-status-row {
+    width: 130px;
+  }
+}
+
 

@@ -762,25 +762,30 @@
       container = document.createElement('div');
       container.id = 'toastContainer';
       container.className = 'toast-container';
+      container.setAttribute('aria-live', 'polite');
       document.body.appendChild(container);
     }
 
     const toast = document.createElement('div');
     toast.className = 'toast';
     toast.innerHTML = `
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-coral); flex-shrink:0;">
-        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-        <polyline points="22 4 12 14.01 9 11.01"/>
-      </svg>
-      <span>${msg}</span>
+      <div class="toast-icon-wrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+      </div>
+      <span class="toast-text">${msg}</span>
     `;
 
     container.appendChild(toast);
     requestAnimationFrame(() => toast.classList.add('is-show'));
     setTimeout(() => {
       toast.classList.remove('is-show');
-      setTimeout(() => toast.remove(), 350);
-    }, 2800);
+      setTimeout(() => {
+        if (toast.parentElement) toast.remove();
+      }, 350);
+    }, 3200);
   }
 
   window.modaToast = showToast;
@@ -971,7 +976,82 @@
     });
   }
 
+  // --- 13. EXCLUSIVE LUXURY PRELOADER ---
+  function initPreloader() {
+    let loader = document.getElementById('pageLoader');
+    if (!loader) {
+      loader = document.createElement('div');
+      loader.id = 'pageLoader';
+      loader.className = 'page-loader';
+      loader.setAttribute('aria-hidden', 'true');
+      loader.innerHTML = `
+        <div class="loader-inner">
+          <div class="loader-emblem-wrap">
+            <div class="loader-halo"></div>
+            <div class="loader-spinner"></div>
+            <div class="loader-emblem">
+              <img src="assets/images/logo.svg" alt="Moda Resale" width="28" height="28">
+            </div>
+          </div>
+          <div class="loader-brand">MODA<span>RESALE</span></div>
+          <div class="loader-tagline">Curated Luxury Archive</div>
+          <div class="loader-progress-track">
+            <div class="loader-progress-fill" id="loaderProgressFill"></div>
+          </div>
+          <div class="loader-status-row">
+            <span class="loader-status-text" id="loaderStatusText">Authenticating</span>
+            <span class="loader-percent" id="loaderPercent">18%</span>
+          </div>
+        </div>
+      `;
+      if (document.body) {
+        document.body.prepend(loader);
+      } else {
+        document.documentElement.appendChild(loader);
+      }
+    }
+
+    const progressFill = document.getElementById('loaderProgressFill') || loader.querySelector('.loader-progress-fill');
+    const percentLabel = document.getElementById('loaderPercent') || loader.querySelector('.loader-percent');
+    const statusText = document.getElementById('loaderStatusText') || loader.querySelector('.loader-status-text');
+
+    let currentPercent = 18;
+    const interval = setInterval(() => {
+      if (currentPercent < 90) {
+        currentPercent += Math.floor(Math.random() * 14) + 6;
+        if (currentPercent > 90) currentPercent = 90;
+        if (progressFill) progressFill.style.width = currentPercent + '%';
+        if (percentLabel) percentLabel.textContent = currentPercent + '%';
+      }
+    }, 40);
+
+    function hideLoader() {
+      clearInterval(interval);
+      if (progressFill) progressFill.style.width = '100%';
+      if (percentLabel) percentLabel.textContent = '100%';
+      if (statusText) statusText.textContent = 'Ready';
+
+      setTimeout(() => {
+        if (loader) {
+          loader.classList.add('is-loaded');
+          setTimeout(() => {
+            loader.style.display = 'none';
+          }, 600);
+        }
+      }, 280);
+    }
+
+    if (document.readyState === 'complete') {
+      hideLoader();
+    } else {
+      window.addEventListener('load', hideLoader);
+      setTimeout(hideLoader, 2500); // Fallback timeout
+    }
+  }
+
   // --- BOOTSTRAP ---
+  initPreloader();
+
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initDirection();
