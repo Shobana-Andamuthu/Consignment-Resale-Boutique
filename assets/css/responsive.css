@@ -51,13 +51,39 @@
 /* 3. TABLET & IPAD (769px - 1080px) */
 @media (max-width: 1080px) {
   .main-nav,
-  .header-auth-pills,
   .header-actions .icon-btn:not(.menu-toggle) {
-    display: none !important; /* Smooth collapse everything into mobile drawer menu */
+    display: none !important; /* Smooth collapse navigation and utility icons */
+  }
+
+  .navbar-inner {
+    gap: 0.5rem !important;
+  }
+
+  .header-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+  }
+
+  .header-auth-pills {
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .header-auth-pills .pill-btn:not(.header-cta-btn) {
+    display: none !important; /* Hide secondary login pill on tablet/mobile to preserve clean spacing */
+  }
+
+  .header-auth-pills .header-cta-btn {
+    display: inline-flex !important;
   }
 
   .menu-toggle {
     display: flex !important;
+    flex-shrink: 0 !important;
   }
 
   .hero-shell {
@@ -87,6 +113,11 @@
     gap: 1.25rem;
   }
 
+  .vault-process-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+
   .lab-grid {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
@@ -106,16 +137,49 @@
 /* 4. MOBILE LANDSCAPE & PHABLET (576px - 768px) */
 @media (max-width: 768px) {
   :root {
-    --header-height: 68px;
-    --container-padding: 1.2rem;
+    --header-height: 64px;
+    --container-padding: 0.95rem;
+  }
+
+  .navbar-inner {
+    gap: 0.4rem !important;
+  }
+
+  .brand-link {
+    gap: 0.45rem !important;
+    min-width: 0 !important;
+  }
+
+  .brand-mark {
+    width: 32px !important;
+    height: 32px !important;
   }
 
   .brand-title {
-    font-size: 1.2rem;
+    font-size: 1.15rem !important;
+    line-height: 1.1 !important;
   }
 
   .brand-sub {
-    font-size: 0.58rem;
+    display: none !important;
+  }
+
+  .header-actions {
+    gap: 0.4rem !important;
+    margin-left: auto !important;
+  }
+
+  .header-cta-btn {
+    padding: 0.4rem 0.85rem !important;
+    font-size: 0.76rem !important;
+  }
+
+  .menu-toggle {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    flex-shrink: 0 !important;
+    font-size: 1.15rem !important;
   }
 
   .vault-ticker-bar {
@@ -229,7 +293,45 @@
 /* 5. STANDARD MOBILE (360px - 540px) */
 @media (max-width: 480px) {
   :root {
-    --container-padding: 1rem;
+    --header-height: 60px;
+    --container-padding: 0.75rem;
+  }
+
+  .site-header .container,
+  .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  .navbar-inner {
+    gap: 0.35rem !important;
+  }
+
+  .brand-mark {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .brand-title {
+    font-size: 1.05rem !important;
+  }
+
+  .header-actions {
+    gap: 0.35rem !important;
+    margin-left: auto !important;
+  }
+
+  .header-cta-btn {
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.72rem !important;
+  }
+
+  .menu-toggle {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    font-size: 1.1rem !important;
+    flex-shrink: 0 !important;
   }
 
   .stats-grid-3 {
@@ -238,8 +340,25 @@
   }
 
   .hero-stats-row {
-    flex-wrap: wrap;
-    gap: 1.25rem;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.35rem !important;
+    padding-top: 1rem !important;
+    width: 100% !important;
+  }
+
+  .hero-stat-item {
+    text-align: left !important;
+  }
+
+  .hero-stat-item b {
+    font-size: 1.15rem !important;
+  }
+
+  .hero-stat-item span {
+    font-size: 0.62rem !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.2 !important;
   }
 
   .hero-buttons {
@@ -351,12 +470,40 @@
     flex-direction: column !important;
     width: 100% !important;
     gap: 0.65rem !important;
+    border-radius: var(--radius-md) !important;
+    padding: 0.6rem !important;
+    align-items: stretch !important;
   }
 
   .lookup-input-group .form-control,
   .lookup-input-group input,
-  .lookup-input-group .btn {
+  .lookup-input-group .lookup-input {
     width: 100% !important;
+    text-align: left !important;
+    padding: 0.65rem 0.85rem !important;
+    background: var(--bg-surface) !important;
+    border-radius: var(--radius-sm) !important;
+  }
+
+  .lookup-input-group .btn,
+  .lookup-input-group .lookup-verify-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .step-list-item {
+    gap: 0.85rem !important;
+  }
+
+  .step-badge,
+  .step-pill {
+    width: 82px !important;
+    height: 28px !important;
+    font-size: 0.68rem !important;
+  }
+
+  .step-text {
+    font-size: 0.94rem !important;
   }
 
   /* Interactive Salon Map Mobile Layout */
@@ -810,6 +957,42 @@
 }
 
 @media (max-width: 360px) {
+  :root {
+    --container-padding: 0.5rem;
+    --header-height: 56px;
+  }
+
+  .site-header .container,
+  .container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .brand-title {
+    font-size: 0.95rem !important;
+  }
+
+  .brand-mark {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .header-actions {
+    gap: 0.25rem !important;
+  }
+
+  .header-cta-btn {
+    padding: 0.3rem 0.55rem !important;
+    font-size: 0.68rem !important;
+  }
+
+  .menu-toggle {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    font-size: 0.95rem !important;
+  }
+
   .loader-emblem-wrap {
     width: 68px;
     height: 68px;

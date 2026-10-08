@@ -639,24 +639,78 @@ ul, ol {
   margin-top: 1.25rem;
 }
 
-.step-list-item {
+.dual-engine-steps {
   display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
-  font-weight: 700;
-  font-size: 0.95rem;
-  line-height: 1.4;
+  flex-direction: column;
+  gap: 0.95rem;
+  margin-top: 1.75rem;
 }
 
-.step-badge {
+.step-list-item {
+  display: flex;
+  gap: 1.15rem;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.35;
+}
+
+.step-badge,
+.step-pill {
   flex-shrink: 0;
-  margin-top: 0.15rem;
-  white-space: nowrap;
+  width: 90px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.step-pill-coral,
+.badge-coral.step-badge {
+  background-color: var(--accent-coral);
+  color: #FFFFFF;
+  border: none;
+}
+
+.step-pill-sage,
+.badge-sage.step-badge {
+  background-color: #E2E8DE;
+  color: #2F3D28;
+  border: none;
+}
+
+[data-theme="dark"] .step-pill-sage,
+[data-theme="dark"] .badge-sage.step-badge {
+  background-color: #2E3B27;
+  color: #D6E4CF;
+}
+
+.step-pill-dark,
+.badge-dark.step-badge {
+  background-color: #211B18;
+  color: #FFFFFF;
+  border: none;
+}
+
+[data-theme="dark"] .step-pill-dark,
+[data-theme="dark"] .badge-dark.step-badge {
+  background-color: #382D27;
+  color: #FFFFFF;
 }
 
 .step-text {
   flex: 1;
   min-width: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
 }
 
 .badge-sage {
@@ -898,8 +952,19 @@ ul, ol {
 .header-auth-pills {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.55rem;
   flex-shrink: 0;
+}
+
+.header-cta-btn {
+  padding: 0.48rem 1.25rem !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+  border-radius: var(--radius-pill) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .menu-toggle {
@@ -1132,8 +1197,8 @@ html.menu-open {
   grid-template-columns: 1.15fr 0.95fr;
   align-items: center;
   gap: clamp(2rem, 4vw, 3.5rem);
-  padding-top: clamp(2rem, 4vw, 3.5rem);
-  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(0.5rem, 1.5vw, 1rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .hero-copy {
@@ -1280,17 +1345,35 @@ html.menu-open {
    Consistent height, balanced spacing, breadcrumb rhythm across all inner pages
    ========================================================================== */
 .inner-page-hero {
-  padding-top: clamp(2.5rem, 4.5vw, 3.75rem);
-  padding-bottom: clamp(2.2rem, 3.8vw, 3rem);
+  padding-top: clamp(3rem, 5.5vw, 4.5rem);
+  padding-bottom: clamp(2.6rem, 4.5vw, 3.8rem);
   margin-bottom: clamp(2rem, 4vw, 3.25rem);
-  background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-primary) 100%);
+  background-color: var(--bg-surface);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   border-bottom: 1.5px solid var(--border-color);
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
+.inner-page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(253, 251, 247, 0.93) 0%, rgba(247, 243, 237, 0.89) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+[data-theme="dark"] .inner-page-hero::before {
+  background: linear-gradient(180deg, rgba(20, 16, 14, 0.94) 0%, rgba(30, 23, 20, 0.90) 100%);
+}
+
 .inner-hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 840px;
   margin: 0 auto;
   display: flex;
@@ -1335,6 +1418,7 @@ html.menu-open {
   margin-top: 0.35rem;
   margin-bottom: 0.65rem;
   line-height: 1.2;
+  color: var(--text-primary);
 }
 
 .inner-hero-subtitle {
@@ -1343,6 +1427,68 @@ html.menu-open {
   max-width: 680px;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+/* Page-Specific High-Resolution Hero Background Images */
+.inner-page-hero-shop {
+  background-image: url('../images/categories/cat_handbags.jpg');
+}
+
+.inner-page-hero-consign {
+  background-image: url('../images/consign/consign-inspection-hero.jpg');
+}
+
+.inner-page-hero-auth {
+  background-image: url('../images/authentication/authentication-lab-hero.jpg');
+}
+
+.inner-page-hero-about {
+  background-image: url('../images/about/about-boutique-hero.jpg');
+}
+
+.inner-page-hero-contact {
+  background-image: url('../images/contact/contact-amenity-vault.jpg');
+}
+
+.inner-page-hero-cart {
+  background-image: url('../images/about/about-circular-packaging.jpg');
+}
+
+.inner-page-hero-wishlist {
+  background-image: url('../images/categories/cat_jewelry.jpg');
+}
+
+.inner-page-hero-login,
+.inner-page-hero-register {
+  background-image: url('../images/boutique/auth_register_visual.jpg');
+}
+
+/* Home 1 Hero Ambient Backdrop */
+.hero-home1-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../images/categories/cat_apparel.jpg');
+  border-bottom: 1.5px solid var(--border-color);
+}
+
+.hero-home1-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 253, 252, 0.94) 0%, rgba(250, 245, 239, 0.90) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+[data-theme="dark"] .hero-home1-section::before {
+  background: linear-gradient(135deg, rgba(20, 16, 14, 0.94) 0%, rgba(30, 23, 20, 0.90) 100%);
+}
+
+.hero-home1-section .container {
+  position: relative;
+  z-index: 2;
 }
 
 /* ==========================================================================
@@ -1667,6 +1813,57 @@ html.menu-open {
   font-size: 0.72rem;
   color: var(--text-muted);
   text-decoration: line-through;
+}
+
+/* 10E. HOME 2 — VAULT LIQUIDATION PROCESS GRID */
+.vault-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+.vault-process-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem 1.35rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.vault-process-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-terracotta);
+  box-shadow: var(--shadow-hover);
+}
+
+.vault-process-card .vault-step-tag {
+  align-self: flex-start;
+  margin-bottom: 0.9rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 0.32rem 0.8rem;
+  border-radius: var(--radius-pill);
+}
+
+.vault-process-card h3 {
+  font-size: 1.12rem;
+  margin-bottom: 0.45rem;
+  color: var(--text-primary);
+}
+
+.vault-process-card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 0;
 }
 
 .hero-vault-metrics-grid {
@@ -2852,17 +3049,58 @@ textarea.form-control {
 
 /* 23. RESPONSIVE COMPONENT HELPERS */
 .lookup-input-group {
-  max-width: 540px;
+  max-width: 580px;
   width: 100%;
   margin: 0 auto;
   display: flex;
-  gap: 0.65rem;
-  align-items: stretch;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 0.35rem 0.35rem 1.4rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.lookup-input-group .form-control {
+.lookup-input-group:focus-within {
+  border-color: var(--accent-terracotta);
+  box-shadow: 0 0 0 3px rgba(201, 111, 90, 0.16);
+}
+
+.lookup-input-group .form-control,
+.lookup-input-group input,
+.lookup-input {
   flex: 1;
   min-width: 0;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  font-family: var(--font-primary);
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: left !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.5rem 0.5rem 0 !important;
+}
+
+.lookup-input-group .form-control::placeholder,
+.lookup-input-group input::placeholder,
+.lookup-input::placeholder {
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: none;
+}
+
+.lookup-input-group .btn,
+.lookup-verify-btn {
+  flex-shrink: 0;
+  padding: 0.72rem 1.55rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
 }
 
 .badge-row {

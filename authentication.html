@@ -97,7 +97,7 @@
 
         <div class="header-auth-pills">
           <a href="login.html" class="pill-btn">Login</a>
-          <a href="register.html" class="pill-btn pill-btn-solid">Sign Up</a>
+          <a href="consign.html" class="btn btn-gradient btn-sm header-cta-btn">Consign Now</a>
         </div>
 
         <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open Navigation">☰</button>
@@ -164,7 +164,7 @@
       </div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; width:100%;">
         <a href="login.html" class="btn btn-light btn-sm" style="text-align:center;">Login</a>
-        <a href="register.html" class="btn btn-gradient btn-sm" style="text-align:center;">Sign Up</a>
+        <a href="consign.html" class="btn btn-gradient btn-sm" style="text-align:center;">Consign Now</a>
       </div>
     </div>
   </aside>
@@ -173,7 +173,7 @@
   <main id="mainContent">
 
     <!-- SECTION 1: Standardized Inner Hero -->
-    <section class="inner-page-hero">
+    <section class="inner-page-hero inner-page-hero-auth">
       <div class="container">
         <div class="inner-hero-content">
           <nav class="inner-hero-breadcrumb" aria-label="Breadcrumb">
@@ -299,17 +299,17 @@
               <p>
                 Our proprietary authentication system uses spectral database comparisons from over 500,000 reference archive scans, validated independently by two senior luxury appraisers.
               </p>
-              <div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem;">
+              <div class="dual-engine-steps">
                 <div class="step-list-item">
-                  <span class="badge badge-coral step-badge">STEP 01</span>
+                  <span class="step-pill step-pill-coral">STEP 01</span>
                   <span class="step-text">AI Spectral Surface &amp; Grain Scan</span>
                 </div>
                 <div class="step-list-item">
-                  <span class="badge badge-sage step-badge">STEP 02</span>
+                  <span class="step-pill step-pill-sage">STEP 02</span>
                   <span class="step-text">Independent Master Authenticator Physical Audit</span>
                 </div>
                 <div class="step-list-item">
-                  <span class="badge badge-dark step-badge">STEP 03</span>
+                  <span class="step-pill step-pill-dark">STEP 03</span>
                   <span class="step-text">Cryptographic NFC Provenance Certificate Issuance</span>
                 </div>
               </div>
@@ -421,8 +421,8 @@
         </div>
 
         <div class="lookup-input-group">
-          <input type="text" class="form-control" placeholder="e.g. MODA-8492" value="MODA-8492" style="text-transform:uppercase; font-weight:700; text-align:center;">
-          <button type="button" class="btn btn-dark btn-sm" onclick="modaToast('Certificate #MODA-8492 Verified: Birkin 25 Togo · Grade 1 Pristine')">Verify Code</button>
+          <input type="text" class="lookup-input" placeholder="e.g. MODA-8492" value="MODA-8492" aria-label="Digital Passport Serial Code">
+          <button type="button" class="btn btn-dark btn-sm lookup-verify-btn" onclick="modaToast('Certificate #MODA-8492 Verified: Birkin 25 Togo · Grade 1 Pristine')">Verify Code</button>
         </div>
       </div>
     </section>
