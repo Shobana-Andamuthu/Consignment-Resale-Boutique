@@ -1049,6 +1049,60 @@
     }
   }
 
+  // --- 14. HOMEPAGE 1 CURATED TABS ENGINE ---
+  function initHome1Tabs() {
+    const tabBtns = document.querySelectorAll('.home1-tab-btn');
+    const cards = document.querySelectorAll('.home1-product-grid .product-card');
+    if (!tabBtns.length || !cards.length) return;
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        tabBtns.forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        const filter = btn.getAttribute('data-filter') || 'all';
+
+        cards.forEach(card => {
+          const cat = card.getAttribute('data-category') || 'all';
+          if (filter === 'all' || cat === filter) {
+            card.style.display = 'flex';
+            card.style.animation = 'modaFadeIn 0.35s ease forwards';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  // --- 15. HOMEPAGE 2 VAULT COUNTDOWN & EXPRESS CONSIGN ---
+  function initVaultFeatures() {
+    const timerEls = document.querySelectorAll('.vault-countdown-timer');
+    if (timerEls.length > 0) {
+      let secondsRemaining = 3 * 3600 + 42 * 60 + 15;
+      setInterval(() => {
+        if (secondsRemaining > 0) {
+          secondsRemaining--;
+          const hrs = Math.floor(secondsRemaining / 3600).toString().padStart(2, '0');
+          const mins = Math.floor((secondsRemaining % 3600) / 60).toString().padStart(2, '0');
+          const secs = (secondsRemaining % 60).toString().padStart(2, '0');
+          timerEls.forEach(el => {
+            el.textContent = `${hrs}:${mins}:${secs}`;
+          });
+        }
+      }, 1000);
+    }
+
+    const expressForm = document.getElementById('expressConsignForm');
+    if (expressForm) {
+      expressForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        showToast('Instant appraisal request received! Our senior authenticator will WhatsApp/email you in 15 minutes.');
+        expressForm.reset();
+      });
+    }
+  }
+
   // --- BOOTSTRAP ---
   initPreloader();
 
@@ -1066,7 +1120,10 @@
     initCustomSelects();
     initCartPage();
     initWishlistPage();
+    initHome1Tabs();
+    initVaultFeatures();
   });
 })();
+
 
 
